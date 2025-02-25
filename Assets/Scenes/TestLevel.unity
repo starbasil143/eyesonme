@@ -524,6 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018124848}
   - component: {fileID: 1018124849}
+  - component: {fileID: 1018124851}
   - component: {fileID: 1018124850}
   m_Layer: 0
   m_Name: PlayerLogic
@@ -576,7 +577,23 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   _transform: {fileID: 0}
   isReady: 0
+  _player: {fileID: 0}
   _lineRenderer: {fileID: 0}
+--- !u!114 &1018124851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018124847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8220120643e1c84eae780bfa51d87d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerParent: {fileID: 0}
+  _transform: {fileID: 0}
+  startingCharges: 2
 --- !u!1 &1691445625
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +789,7 @@ GameObject:
   - component: {fileID: 2133025968}
   - component: {fileID: 2133025969}
   m_Layer: 0
-  m_Name: Line
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

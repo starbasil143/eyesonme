@@ -7,12 +7,16 @@ public class PlayerAim : MonoBehaviour
     public Camera MainCamera;
     public Transform _transform;
     public bool isReady;
+    public Player _player;
+
+
     [SerializeField] private LineRenderer _lineRenderer;
 
 
     void Awake()
     {
         PlayerParent = transform.parent.gameObject;
+        _player = PlayerParent.GetComponentInChildren<Player>();
         _transform = PlayerParent.transform;
         _lineRenderer = PlayerParent.GetComponentInChildren<LineRenderer>();
         _lineRenderer.positionCount = 2;
@@ -62,6 +66,14 @@ public class PlayerAim : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("bang!!!!!");
+        if (_player.GetRemainingCharges() >= 1)
+        {
+            _player.ExpendCharge();
+            Debug.Log("bang!!!!!");
+        }
+        else
+        {
+            Debug.Log("fizzle.....");
+        }
     }
 }

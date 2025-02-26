@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     public GameObject PlayerParent;
     public Transform _transform;
-    public int startingCharges;
+    public LevelLogic _levelLogic;
 
     private int remainingCharges;
 
@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     {
         PlayerParent = transform.parent.gameObject;
         _transform = PlayerParent.transform;
-        remainingCharges = startingCharges;
+        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelLogic>();
+        remainingCharges = _levelLogic.chargeLimit;
     }
 
 
@@ -29,5 +30,9 @@ public class Player : MonoBehaviour
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;
+        if (remainingCharges <= 0)
+        {
+            _levelLogic.HandleLoss();
+        }
     }
 }

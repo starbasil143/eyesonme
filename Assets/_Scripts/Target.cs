@@ -19,9 +19,11 @@ public class Target : MonoBehaviour
 
     public TargetType targetType;
     private GameObject TargetParent;
+    private LevelLogic _levelLogic;
     
     void Awake()
     {
+        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelLogic>();
         TargetParent = transform.parent.gameObject;
         enemy = (targetType==TargetType.Skeleton || 
                  targetType==TargetType.Zombie || 
@@ -43,6 +45,7 @@ public class Target : MonoBehaviour
             case TargetType.Skeleton:
 
                 Destroy(TargetParent);
+                _levelLogic.HandleKill();
                 msg = "continue";
                 break;
 
@@ -65,6 +68,7 @@ public class Target : MonoBehaviour
             case TargetType.Danger:
 
                 msg = "danger";
+                _levelLogic.HandleLoss();
                 break;
 
         }

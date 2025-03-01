@@ -51,7 +51,6 @@ public class PlayerAim : MonoBehaviour
         {
             if (_player.GetRemainingCharges() >= 1)
             {
-                _player.ExpendCharge();
                 Fire();
             }
             else
@@ -98,6 +97,7 @@ public class PlayerAim : MonoBehaviour
                     break;
 
                 case "stop":
+                    _player.ExpendCharge();
                     break;
 
                 case "danger":

@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;
-        if (remainingCharges <= 0)
+        if (remainingCharges <= 0 && _levelLogic.enemyCount > 0)
         {
             _levelLogic.HandleLoss();
         }

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance;
     private PlayerInput _playerInput;
 
     
@@ -18,16 +19,30 @@ public class InputManager : MonoBehaviour
     public static bool Fire;
     private InputAction _fireAction;
 
+    public static bool Pause;
+    private InputAction _pauseAction;
+    
+    public static bool Unpause;
+    private InputAction _unpauseAction;
+
 
 
     private void Awake()
     {
-        _playerInput = GetComponent<PlayerInput>();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        
 
+
+        _playerInput = GetComponent<PlayerInput>();
         _moveAction = _playerInput.actions["Move"];
         _aimAction = _playerInput.actions["Aim"];
         _readyAction = _playerInput.actions["Ready"];
         _fireAction = _playerInput.actions["Fire"];
+        _pauseAction = _playerInput.actions["Pause"];
+        _unpauseAction = _playerInput.actions["Unpause"];
     }
 
     private void Update()
@@ -36,7 +51,17 @@ public class InputManager : MonoBehaviour
         Aim = _aimAction.ReadValue<Vector2>();
         Ready = _readyAction.IsPressed();
         Fire = _fireAction.WasPressedThisFrame();
+        Pause = _pauseAction.WasPressedThisFrame();
+        Unpause = _unpauseAction.WasPressedThisFrame();
+    }
 
+    public void SwitchToPuzzleMap()
+    {
+        _playerInput.SwitchCurrentActionMap("Puzzle");
+    }
+    public void SwitchToUIMap()
+    {
+        _playerInput.SwitchCurrentActionMap("UI");
     }
 
 }

@@ -8,12 +8,17 @@ public class LevelLogic : MonoBehaviour
     public int levelIndex;
     public int chargeLimit;
     public int enemyCount;
+    public string nextScene;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
+    public PauseManager pauseManager;
 
 
 
     void Awake()
     {
-        
+        pauseManager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<PauseManager>();
     }
 
     public void HandleKill()
@@ -27,12 +32,26 @@ public class LevelLogic : MonoBehaviour
 
     public void HandleLoss()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        loseScreen.SetActive(true);
+        pauseManager.ForcePause();
     }
 
     public void HandleWin()
     {
+        winScreen.SetActive(true);
+        pauseManager.ForcePause();
+    }
+
+    public void RestartLevel()
+    {
+        pauseManager.ForceUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToNextScene()
+    {
+        pauseManager.ForceUnpause();
+        SceneManager.LoadScene(nextScene);
     }
 
 

@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
     public GameObject PlayerParent;
     public Transform _transform;
     public LevelLogic _levelLogic;
+    private GameObject ChargesPanel;
+
 
     private int remainingCharges;
 
@@ -14,6 +16,11 @@ public class Player : MonoBehaviour
         _transform = PlayerParent.transform;
         _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelLogic>();
         remainingCharges = _levelLogic.chargeLimit;
+        ChargesPanel = GameObject.FindGameObjectWithTag("ChargesPanel");
+        foreach (ChargeIcon chargeIcon in ChargesPanel.GetComponentsInChildren<ChargeIcon>())
+        {
+            chargeIcon.UpdateUIFirst(remainingCharges);
+        }
     }
 
 
@@ -30,6 +37,12 @@ public class Player : MonoBehaviour
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;
+
+        foreach (ChargeIcon chargeIcon in ChargesPanel.GetComponentsInChildren<ChargeIcon>())
+        {
+            chargeIcon.UpdateUI(remainingCharges);
+        }
+
         if (remainingCharges <= 0 && _levelLogic.enemyCount > 0)
         {
             _levelLogic.HandleLoss();

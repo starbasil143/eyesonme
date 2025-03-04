@@ -25,6 +25,9 @@ public class InputManager : MonoBehaviour
     public static bool Unpause;
     private InputAction _unpauseAction;
 
+    public static bool Reset;
+    private InputAction _resetAction;
+
 
 
     private void Awake()
@@ -43,6 +46,7 @@ public class InputManager : MonoBehaviour
         _fireAction = _playerInput.actions["Fire"];
         _pauseAction = _playerInput.actions["Pause"];
         _unpauseAction = _playerInput.actions["Unpause"];
+        _resetAction = _playerInput.actions["Reset"];
     }
 
     private void Update()
@@ -53,6 +57,7 @@ public class InputManager : MonoBehaviour
         Fire = _fireAction.WasPressedThisFrame();
         Pause = _pauseAction.WasPressedThisFrame();
         Unpause = _unpauseAction.WasPressedThisFrame();
+        Reset = _resetAction.WasPressedThisFrame();
     }
 
     public void SwitchToPuzzleMap()

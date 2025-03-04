@@ -7,11 +7,13 @@ public class Target : MonoBehaviour
     {
         Skeleton,
         Zombie,
-        Revenant,
         Wall,
         BreakableWall,
         Mirror,
         Danger,
+        FlimsyWall,
+        Revenant,
+        Tank,
     }
 
     [System.NonSerialized]
@@ -27,7 +29,8 @@ public class Target : MonoBehaviour
         TargetParent = transform.parent.gameObject;
         enemy = (targetType==TargetType.Skeleton || 
                  targetType==TargetType.Zombie || 
-                 targetType==TargetType.Revenant);
+                 targetType==TargetType.Revenant ||
+                 targetType==TargetType.Tank);
     }
 
     // Update is called once per frame
@@ -47,6 +50,13 @@ public class Target : MonoBehaviour
                 Destroy(TargetParent);
                 _levelLogic.HandleKill();
                 msg = "continue";
+                break;
+
+            case TargetType.Tank:
+
+                Destroy(TargetParent);
+                _levelLogic.HandleKill();
+                msg = "stop";
                 break;
 
             case TargetType.Wall:
@@ -69,6 +79,11 @@ public class Target : MonoBehaviour
 
                 msg = "danger";
                 _levelLogic.HandleLoss();
+                break;
+
+            case TargetType.FlimsyWall:
+                Destroy(TargetParent);
+                msg = "continue";
                 break;
 
         }

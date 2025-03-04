@@ -45,7 +45,10 @@ public class Player : MonoBehaviour
 
         if (remainingCharges <= 0 && _levelLogic.enemyCount > 0)
         {
-            _levelLogic.HandleLoss();
+            //_levelLogic.HandleLoss();
         }
     }
+
+    
+
 }

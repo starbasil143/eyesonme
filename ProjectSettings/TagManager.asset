@@ -8,6 +8,7 @@ TagManager:
   - Level Manager
   - MenuManager
   - ChargesPanel
+  - Goal
   layers:
   - Default
   - TransparentFX

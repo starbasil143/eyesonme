@@ -105,6 +105,10 @@ public class PlayerAim : MonoBehaviour
                     break;
             }
         }
+        else
+        {
+            _player.ExpendCharge();
+        }
     }
 
     private Vector2 GetMouseDirectionVector()

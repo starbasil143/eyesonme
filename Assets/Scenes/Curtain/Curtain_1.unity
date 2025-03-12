@@ -325,6 +325,260 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158869957}
   m_CullTransparentMesh: 1
+--- !u!1 &315439046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 315439047}
+  - component: {fileID: 315439048}
+  m_Layer: 0
+  m_Name: FMOD Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315439047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315439046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407652359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315439048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315439046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0998f5e30665d4595ed076c334256e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voice_default:
+    Guid:
+      Data1: 459586350
+      Data2: 1296905559
+      Data3: -1624768877
+      Data4: -7022933
+    Path: event:/Voices/DefaultVoice
+  voice_father:
+    Guid:
+      Data1: 585636426
+      Data2: 1244517248
+      Data3: -198734455
+      Data4: 915880207
+    Path: event:/Voices/DeepVoice
+  voice_typing:
+    Guid:
+      Data1: 769707738
+      Data2: 1163340200
+      Data3: 517509292
+      Data4: 1239535690
+    Path: event:/Voices/TypingVoice
+  voice_inner:
+    Guid:
+      Data1: 1431531053
+      Data2: 1339719781
+      Data3: -1057611075
+      Data4: -1006283519
+    Path: event:/Voices/InnerVoice
+  voice_deep:
+    Guid:
+      Data1: 585636426
+      Data2: 1244517248
+      Data3: -198734455
+      Data4: 915880207
+    Path: event:/Voices/DeepVoice
+  voice_nasal:
+    Guid:
+      Data1: 1474438848
+      Data2: 1302089935
+      Data3: -950446401
+      Data4: -2061647199
+    Path: event:/Voices/NasalVoice
+  voice_soft:
+    Guid:
+      Data1: -1981953380
+      Data2: 1092289316
+      Data3: 741746852
+      Data4: -1621176509
+    Path: event:/Voices/SoftVoice
+  voice_kid:
+    Guid:
+      Data1: 1787641498
+      Data2: 1129221732
+      Data3: -1536410433
+      Data4: 463973121
+    Path: event:/Voices/KidVoice
+  voice_stupid:
+    Guid:
+      Data1: -1280949839
+      Data2: 1115514536
+      Data3: -614029656
+      Data4: 1275148751
+    Path: event:/Voices/StupidVoice
+  sfx_beam_charge:
+    Guid:
+      Data1: -1390243505
+      Data2: 1206324016
+      Data3: 423786934
+      Data4: -98311100
+    Path: event:/SFX/Player/Beam Charge
+  sfx_beam_fire:
+    Guid:
+      Data1: 84737484
+      Data2: 1256705527
+      Data3: -1364500074
+      Data4: 728784808
+    Path: event:/SFX/Player/Beam Fire
+  sfx_beam_continue:
+    Guid:
+      Data1: -1415520706
+      Data2: 1284044693
+      Data3: -327911271
+      Data4: 734404025
+    Path: event:/SFX/Player/Beam Continue
+  sfx_beam_reflect:
+    Guid:
+      Data1: 76674877
+      Data2: 1273977429
+      Data3: -696679758
+      Data4: -986859665
+    Path: event:/SFX/Player/Beam Reflect
+  sfx_beam_hum:
+    Guid:
+      Data1: 1810503207
+      Data2: 1092134522
+      Data3: -1654938702
+      Data4: -1271321402
+    Path: event:/SFX/Player/Beam Hum
+  sfx_wall:
+    Guid:
+      Data1: 1810503207
+      Data2: 1092134522
+      Data3: -1654938702
+      Data4: -1271321402
+    Path: event:/SFX/Player/Beam Hum
+  sfx_wall_breakable:
+    Guid:
+      Data1: -455858909
+      Data2: 1254017000
+      Data3: 891007908
+      Data4: 2089540123
+    Path: event:/SFX/Targets/Wall Breakable
+  sfx_wall_flimsy:
+    Guid:
+      Data1: 97444154
+      Data2: 1212212362
+      Data3: 1429842056
+      Data4: -368966254
+    Path: event:/SFX/Targets/Wall Flimsy
+  sfx_wall_bad:
+    Guid:
+      Data1: -1406489425
+      Data2: 1260515371
+      Data3: -1111135057
+      Data4: -1579217921
+    Path: event:/SFX/Targets/Wall Bad
+  sfx_wall_mirror:
+    Guid:
+      Data1: -710323569
+      Data2: 1075375372
+      Data3: -759986511
+      Data4: 396675423
+    Path: event:/SFX/Targets/Wall Mirror
+  sfx_skeleton:
+    Guid:
+      Data1: -1857842051
+      Data2: 1231374445
+      Data3: -277999968
+      Data4: -808500319
+    Path: event:/SFX/Enemies/Skeleton
+  sfx_zombie:
+    Guid:
+      Data1: -2004502161
+      Data2: 1283137286
+      Data3: -177175652
+      Data4: -669070319
+    Path: event:/SFX/Enemies/Zombie
+  sfx_revenant:
+    Guid:
+      Data1: 1320224932
+      Data2: 1233845325
+      Data3: 2042938773
+      Data4: 1632301426
+    Path: event:/SFX/Enemies/Revenant
+  sfx_tank:
+    Guid:
+      Data1: -1171138730
+      Data2: 1305374837
+      Data3: -1450354303
+      Data4: 1810449581
+    Path: event:/SFX/Enemies/Tank
+  sfx_select:
+    Guid:
+      Data1: -1739545857
+      Data2: 1272680004
+      Data3: 1355948191
+      Data4: -581982612
+    Path: event:/SFX/UI/Select
+  sfx_confirm:
+    Guid:
+      Data1: -1050684191
+      Data2: 1108501541
+      Data3: -2013003880
+      Data4: -1330415808
+    Path: event:/SFX/UI/Confirm
+  sfx_startgame:
+    Guid:
+      Data1: 1067768222
+      Data2: 1290487682
+      Data3: 1039624350
+      Data4: 2111894538
+    Path: event:/SFX/UI/StartGame
+  sfx_fill:
+    Guid:
+      Data1: 1482661411
+      Data2: 1335939563
+      Data3: -1851670635
+      Data4: 1469877262
+    Path: event:/SFX/General/Fill
+  sfx_cheers:
+    Guid:
+      Data1: 6453230
+      Data2: 1302678866
+      Data3: 1467151030
+      Data4: -1311664026
+    Path: event:/SFX/General/Cheers
+  ambience:
+    Guid:
+      Data1: 1598125727
+      Data2: 1133167037
+      Data3: -1691190619
+      Data4: 1013197088
+    Path: event:/Ambience/Wind
+  music:
+    Guid:
+      Data1: 575621830
+      Data2: 1264787302
+      Data3: 1067145610
+      Data4: 2004713201
+    Path: event:/Music/BGM
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +1049,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1407652357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407652359}
+  - component: {fileID: 1407652358}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1407652358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407652357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee8e5a231ecd6a47b8436d5acf0e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 0.7
+  musicVolume: 0.7
+  sfxVolume: 0.7
+  voiceVolume: 0.7
+  ambienceVolume: 0.7
+--- !u!4 &1407652359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407652357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.099356, y: -0.1504993, z: 0.0790153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 315439047}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427170866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115606058}
   - component: {fileID: 2115606059}
+  - component: {fileID: 2115606060}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -1155,6 +1460,23 @@ PlayableDirector:
     value: {fileID: 146355884}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2115606060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115606057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e424351e369e544590d7816dc64f9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueAssets:
+  - {fileID: 0}
+  objectsToDisable: []
+  objectsToEnable: []
+  associatedFlag: 
 --- !u!1 &824338688762619430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1542,7 @@ SceneRoots:
   - {fileID: 2065240257}
   - {fileID: 2115606058}
   - {fileID: 1427170867}
+  - {fileID: 1407652359}
   - {fileID: 838081724}
   - {fileID: 792679799}
   - {fileID: 711886116}

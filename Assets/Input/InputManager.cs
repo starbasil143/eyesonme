@@ -28,6 +28,15 @@ public class InputManager : MonoBehaviour
     public static bool Reset;
     private InputAction _resetAction;
 
+    public static bool Advance;
+    private InputAction _advanceAction;
+
+    public static bool Right;
+    private InputAction _rightAction;
+
+    public static bool Left;
+    private InputAction _leftAction;
+
 
 
     private void Awake()
@@ -47,6 +56,9 @@ public class InputManager : MonoBehaviour
         _pauseAction = _playerInput.actions["Pause"];
         _unpauseAction = _playerInput.actions["Unpause"];
         _resetAction = _playerInput.actions["Reset"];
+        _advanceAction = _playerInput.actions["Advance"];
+        _leftAction = _playerInput.actions["Left"];
+        _rightAction = _playerInput.actions["Right"];
     }
 
     private void Update()
@@ -58,6 +70,9 @@ public class InputManager : MonoBehaviour
         Pause = _pauseAction.WasPressedThisFrame();
         Unpause = _unpauseAction.WasPressedThisFrame();
         Reset = _resetAction.WasPressedThisFrame();
+        Advance = _advanceAction.WasPressedThisFrame();
+        Left = _leftAction.WasPressedThisFrame();
+        Right = _rightAction.WasPressedThisFrame();
     }
 
     public void SwitchToPuzzleMap()
@@ -67,6 +82,10 @@ public class InputManager : MonoBehaviour
     public void SwitchToUIMap()
     {
         _playerInput.SwitchCurrentActionMap("UI");
+    }
+    public void SwitchToDialogueMap()
+    {
+        _playerInput.SwitchCurrentActionMap("Dialogue");
     }
 
 }

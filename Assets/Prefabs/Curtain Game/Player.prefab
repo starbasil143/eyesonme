@@ -193,7 +193,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5015273834127118439
@@ -205,9 +205,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9148238126668316259}
-  - component: {fileID: 6848512728193059812}
-  - component: {fileID: 4973089185178342502}
-  - component: {fileID: 7428596525446014275}
+  - component: {fileID: 8780605663687183428}
+  - component: {fileID: 3343456083912779504}
+  - component: {fileID: 4112412269600210920}
   m_Layer: 3
   m_Name: PlayerLogic
   m_TagString: Untagged
@@ -230,7 +230,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8018051572320558963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6848512728193059812
+--- !u!114 &8780605663687183428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,11 +239,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5015273834127118439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140fb9927887bfa4593ef65f4e7c4228, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e6663043be5d2f4a850ee9c0cf2e3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 7
---- !u!114 &4973089185178342502
+--- !u!114 &3343456083912779504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,13 +252,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5015273834127118439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8220120643e1c84eae780bfa51d87d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b8cb285b6d341f468d885a1dcd8260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerParent: {fileID: 0}
   _transform: {fileID: 0}
   _levelLogic: {fileID: 0}
---- !u!114 &7428596525446014275
+--- !u!114 &4112412269600210920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5015273834127118439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fd320d6dce2f749a058119cec6d25b, type: 3}
+  m_Script: {fileID: 11500000, guid: e174f50f633a75f4b908778d8ae0fac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerParent: {fileID: 0}

@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class CTarget : MonoBehaviour
 {
     public enum TargetType
     {
@@ -21,11 +21,11 @@ public class Target : MonoBehaviour
 
     public TargetType targetType;
     private GameObject TargetParent;
-    private CLevelLogic _levelLogic;
+    private LevelLogic _levelLogic;
     
     void Awake()
     {
-        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<CLevelLogic>();
+        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelLogic>();
         TargetParent = transform.parent.gameObject;
         enemy = (targetType==TargetType.Skeleton || 
                  targetType==TargetType.Zombie || 
@@ -47,16 +47,16 @@ public class Target : MonoBehaviour
         {
             case TargetType.Skeleton:
 
+                Destroy(TargetParent);
                 _levelLogic.HandleKill();
                 msg = "continue";
-                Destroy(TargetParent);
                 break;
 
             case TargetType.Tank:
 
+                Destroy(TargetParent);
                 _levelLogic.HandleKill();
                 msg = "stop";
-                Destroy(TargetParent);
                 break;
 
             case TargetType.Wall:
@@ -66,8 +66,8 @@ public class Target : MonoBehaviour
 
             case TargetType.BreakableWall:
 
-                msg = "stop";
                 Destroy(TargetParent);
+                msg = "stop";
                 break;
 
             case TargetType.Mirror:
@@ -78,12 +78,12 @@ public class Target : MonoBehaviour
             case TargetType.Danger:
 
                 msg = "danger";
-                _levelLogic._gameManager.RestartLevel();
+                _levelLogic.HandleLoss();
                 break;
 
             case TargetType.FlimsyWall:
-                msg = "continue";
                 Destroy(TargetParent);
+                msg = "continue";
                 break;
 
         }

@@ -9,6 +9,8 @@ TagManager:
   - MenuManager
   - ChargesPanel
   - Goal
+  - TimelineManager
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

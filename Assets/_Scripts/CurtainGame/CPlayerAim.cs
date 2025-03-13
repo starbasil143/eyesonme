@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class CPlayerAim : MonoBehaviour
@@ -10,10 +11,16 @@ public class CPlayerAim : MonoBehaviour
     public CPlayer _player;
     public CLevelLogic _levelLogic;
     public CGameManager _gameManager;
+    public Material aimMaterial;
+    public Material beamMaterial;
+    public bool isFrozen = false;
 
     private LayerMask layerMask;
 
     [SerializeField] private LineRenderer _lineRenderer;
+
+    public float aimWidth = .13f;
+    public float beamWidth = .3f;
 
 
     void Awake()
@@ -27,45 +34,49 @@ public class CPlayerAim : MonoBehaviour
         _gameManager = _player._gameManager;
         layerMask = LayerMask.GetMask("Target");
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        _lineRenderer.material = aimMaterial;
     }
 
 
     void Update()
     {
-        if (InputManager.Ready)
+        if (!isFrozen)
         {
-            ReadyUpdate();
+            if (InputManager.Ready)
+            {
+                ReadyUpdate();
 
-            if (!isReady)
-            {
-                isReady = true;
-                _lineRenderer.enabled = true;
-            }
-        }
-        else
-        {
-            if (isReady)
-            {
-                isReady = false;
-                _lineRenderer.enabled = false;
-            }
-        }
-
-        if (InputManager.Fire && isReady)
-        {
-            if (_player.GetRemainingCharges() >= 1)
-            {
-                Fire();
+                if (!isReady)
+                {
+                    isReady = true;
+                    _lineRenderer.enabled = true;
+                }
             }
             else
             {
-                Debug.Log("fizzle.....");
+                if (isReady)
+                {
+                    isReady = false;
+                    _lineRenderer.enabled = false;
+                }
             }
-        }
 
-        if (InputManager.Reset)
-        {
-            _gameManager.RestartLevel();
+            if (InputManager.Fire && isReady)
+            {
+                if (_player.GetRemainingCharges() >= 1)
+                {
+                    Fire();
+                }
+                else
+                {
+                    Debug.Log("fizzle.....");
+                }
+            }
+
+            if (InputManager.Reset)
+            {
+                _gameManager.RestartLevel();
+            }   
         }
     
     }
@@ -75,19 +86,30 @@ public class CPlayerAim : MonoBehaviour
     { 
         Vector2 playerPos = _transform.position;
 
+        if (_lineRenderer.material != aimMaterial)
+        {
+            _lineRenderer.positionCount = 2;
+            _lineRenderer.startWidth = aimWidth;
+            _lineRenderer.endWidth = aimWidth;
+            _lineRenderer.material = aimMaterial;
+        }
+
+        RaycastHit2D ray;
+        ray = Physics2D.Raycast(playerPos, GetMouseDirectionVector(), Mathf.Infinity, layerMask);
         _lineRenderer.SetPosition(0, playerPos);
-        _lineRenderer.SetPosition(1, playerPos + GetMouseDirectionVector()*20);
+        _lineRenderer.SetPosition(1, ray.point);
 
     }
 
     private void Fire()
     {
-        BeamContinue(_transform.position, GetMouseDirectionVector(), true);
+        StartCoroutine(BeamContinue(_transform.position, GetMouseDirectionVector(), true));
     }
 
-    private void BeamContinue(Vector2 newOrigin, Vector2 direction, bool ignorePlayer = false)
+    IEnumerator BeamContinue(Vector2 newOrigin, Vector2 direction, bool ignorePlayer = false)
     {
         RaycastHit2D ray;
+        
 
         if (ignorePlayer)
         {
@@ -98,28 +120,68 @@ public class CPlayerAim : MonoBehaviour
             ray = Physics2D.Raycast(newOrigin, direction, Mathf.Infinity);
         }
 
+        _lineRenderer.material = beamMaterial;
+        _lineRenderer.startWidth = beamWidth;
+        _lineRenderer.endWidth = beamWidth;
+
+        if(ignorePlayer) // if this is the initial beam segment
+        {
+            _lineRenderer.SetPosition(0, newOrigin);
+            _lineRenderer.SetPosition(1, ray.point);
+        }
+        else
+        {
+            _lineRenderer.positionCount++;
+            _lineRenderer.SetPosition(_lineRenderer.positionCount-1, ray.point);
+        }
+
+
+
         if (ray.collider.CompareTag("Target"))
         {
-            switch (ray.collider.GetComponentInChildren<Target>().HandleBeam())
+            
+            
+            if (!isFrozen)
             {
-                case "continue":
-                    BeamContinue(ray.point, direction);
-                    break;
+                isFrozen = true;
+                float timeToReturnTo = Time.timeScale;
 
-                case "stop":
-                    _player.ExpendCharge();
-                    break;
+                Time.timeScale=0f;
 
-                case "danger":
-                    LoseLevel();
-                    break;
+                yield return new WaitForSecondsRealtime(.15f);
+
+                Time.timeScale = 1f;
+                isFrozen = false;
+
+                switch (ray.collider.GetComponentInChildren<Target>().HandleBeam())
+                {
+                    case "continue":
+                        StartCoroutine(BeamContinue(ray.point, direction));
+                        Debug.Log("beam: continue");
+                        break;
+
+                    case "stop":
+                        _levelLogic.CheckWin();
+                        _player.ExpendCharge();
+                        break;
+
+                    case "danger":
+                        LoseLevel();
+                        break;
+                }
             }
         }
         else
         {
+            _levelLogic.CheckWin();
             _player.ExpendCharge();
         }
+        
+        
     }
+    
+    
+    
 
     private Vector2 GetMouseDirectionVector()
     {

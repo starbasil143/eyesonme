@@ -16,7 +16,6 @@ public class CLevelLogic : MonoBehaviour
         pauseManager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<PauseManager>();
         _gameManager = transform.parent.gameObject.GetComponent<CGameManager>();
         enemiesRemaining = enemyCount;
-        Debug.Log(this);
         // goalObject = GameObject.FindGameObjectWithTag("Goal");
         // Color goalcolor = goalObject.GetComponentInChildren<SpriteRenderer>().color;
         // goalObject.GetComponentInChildren<SpriteRenderer>().color = new Color(goalcolor.r, goalcolor.g, goalcolor.b, .2f);
@@ -27,7 +26,10 @@ public class CLevelLogic : MonoBehaviour
     public void HandleKill()
     {
         enemiesRemaining--;
-        Debug.Log(this +": "+enemiesRemaining + " out of " + enemyCount + " left.");
+    }
+
+    public void CheckWin()
+    {
         if (enemiesRemaining == 0)
         {
             _gameManager.WinLevel();

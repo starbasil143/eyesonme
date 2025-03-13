@@ -13,6 +13,7 @@ public class CGameManager : MonoBehaviour
     public Image progressBarFill;
     public CPlayer _player;
     public Animator animator;
+    bool isFrozen = false;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class CGameManager : MonoBehaviour
     public void StartLevel()
     {
         currentLevel = Instantiate(levels[index], gameObject.transform);
+        _player = currentLevel.GetComponentInChildren<CPlayer>();
     }
 
     public void CloseLevel()
@@ -38,6 +40,27 @@ public class CGameManager : MonoBehaviour
         if (currentLevel != null)
         {
             Destroy(currentLevel);
+        }
+    }
+
+    public void ImpactFreeze(float duration)
+    {
+        StartCoroutine(FreezeCoroutine(duration));
+    }
+
+    IEnumerator FreezeCoroutine(float duration)
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            float timeToReturnTo = Time.timeScale;
+
+            Time.timeScale=0f;
+
+            yield return new WaitForSecondsRealtime(duration);
+
+            Time.timeScale = timeToReturnTo;
+            isFrozen = false;
         }
     }
 
@@ -97,6 +120,7 @@ public class CGameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        Debug.Log("level win");
         if (index < levels.Length - 1)
         {
             NextLevel();
@@ -114,12 +138,5 @@ public class CGameManager : MonoBehaviour
         animator.Play("c_level_transition");
     }
 
-    IEnumerator LevelTransitionDelay()
-    {
-        _player.gameObject.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        Destroy(currentLevel);
-        index++;
-        progressBarFill.fillAmount = (float)index/levels.Length; 
-    }
+ 
 }

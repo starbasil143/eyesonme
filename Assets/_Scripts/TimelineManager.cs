@@ -9,6 +9,7 @@ public class TimelineManager : MonoBehaviour
     public List<TextAsset> dialogueAssets;
     public List<GameObject> objectsToDisable;
     public List<GameObject> objectsToEnable;
+    public CGameManager _gameManager;
     public string associatedFlag;
     
 
@@ -73,6 +74,11 @@ public class TimelineManager : MonoBehaviour
     public void DeactivateDirector()
     {
         gameObject.SetActive(false);
+    }
+
+    public void StartPuzzle()
+    {
+        _gameManager.StartFirstLevel();
     }
 
     public void SetMusic()

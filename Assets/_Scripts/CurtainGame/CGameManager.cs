@@ -114,6 +114,8 @@ public class CGameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        
+        currentLevel.GetComponent<CLevelLogic>().ClearMessageText();
         Destroy(currentLevel);
         currentLevel = Instantiate(levels[index], gameObject.transform);
     }

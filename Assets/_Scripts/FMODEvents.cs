@@ -31,6 +31,7 @@ public class FMODEvents : MonoBehaviour
     public EventReference sfx_wall_mirror;
 
     [Header("SFX Enemies")]
+    public EventReference sfx_ping;
     public EventReference sfx_skeleton;
     public EventReference sfx_zombie;
     public EventReference sfx_revenant;

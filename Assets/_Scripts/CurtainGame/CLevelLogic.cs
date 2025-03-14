@@ -38,6 +38,10 @@ public class CLevelLogic : MonoBehaviour
         // goalObject.GetComponentInChildren<SpriteRenderer>().color = new Color(goalcolor.r, goalcolor.g, goalcolor.b, .2f);
     }
 
+    public void ClearMessageText()
+    {
+        messageText.text = "";
+    }
     
 
     public void HandleKill()
@@ -49,9 +53,15 @@ public class CLevelLogic : MonoBehaviour
     {
         if (enemiesRemaining == 0)
         {
-            messageText.text = "";
+            ClearMessageText();
             _gameManager.WinLevel();
         }
+    }
+
+    public void ExitLevel()
+    {
+        ClearMessageText();
+        Destroy(gameObject);
     }
 
 

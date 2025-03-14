@@ -88,6 +88,9 @@ MonoBehaviour:
   enemiesRemaining: 0
   pauseManager: {fileID: 0}
   _gameManager: {fileID: 0}
+  levelStartMessage: Hit all targets at once
+  messageDelay: 0.5
+  typingSpeed: 0.05
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -87,6 +87,9 @@ MonoBehaviour:
   enemiesRemaining: 0
   pauseManager: {fileID: 0}
   _gameManager: {fileID: 0}
+  levelStartMessage: Target the circles
+  messageDelay: 0.5
+  typingSpeed: 0.05
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0

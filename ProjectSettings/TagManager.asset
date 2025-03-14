@@ -12,6 +12,7 @@ TagManager:
   - TimelineManager
   - DialogueManager
   - GameManager
+  - LevelMessage
   layers:
   - Default
   - TransparentFX

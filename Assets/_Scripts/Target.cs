@@ -1,6 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+
+
 public class Target : MonoBehaviour
 {
     public enum TargetType
@@ -22,6 +25,7 @@ public class Target : MonoBehaviour
     public TargetType targetType;
     private GameObject TargetParent;
     private CLevelLogic _levelLogic;
+    public GameObject deathObject;
     
     void Awake()
     {
@@ -37,6 +41,15 @@ public class Target : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public void PreFreezeHandleBeam()
+    {
+        if (deathObject != null)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            Instantiate(deathObject, transform.position, transform.rotation);
+        }
     }
 
     public string HandleBeam()

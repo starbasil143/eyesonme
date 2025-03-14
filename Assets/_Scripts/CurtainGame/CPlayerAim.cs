@@ -11,16 +11,14 @@ public class CPlayerAim : MonoBehaviour
     public CPlayer _player;
     public CLevelLogic _levelLogic;
     public CGameManager _gameManager;
-    public Material aimMaterial;
-    public Material beamMaterial;
     public bool isFrozen = false;
 
     private LayerMask layerMask;
 
     [SerializeField] private LineRenderer _lineRenderer;
 
-    public float aimWidth = .13f;
-    public float beamWidth = .3f;
+    [SerializeField] private LineRenderer _beamRenderer;
+    public float hitStopDuration = .2f;
 
 
     void Awake()
@@ -28,13 +26,11 @@ public class CPlayerAim : MonoBehaviour
         PlayerParent = transform.parent.gameObject;
         _player = PlayerParent.GetComponentInChildren<CPlayer>();
         _transform = PlayerParent.transform;
-        _lineRenderer = PlayerParent.GetComponentInChildren<LineRenderer>();
         _lineRenderer.positionCount = 2;
         _levelLogic = _player._levelLogic;
         _gameManager = _player._gameManager;
         layerMask = LayerMask.GetMask("Target");
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        _lineRenderer.material = aimMaterial;
     }
 
 
@@ -86,14 +82,6 @@ public class CPlayerAim : MonoBehaviour
     { 
         Vector2 playerPos = _transform.position;
 
-        if (_lineRenderer.material != aimMaterial)
-        {
-            _lineRenderer.positionCount = 2;
-            _lineRenderer.startWidth = aimWidth;
-            _lineRenderer.endWidth = aimWidth;
-            _lineRenderer.material = aimMaterial;
-        }
-
         RaycastHit2D ray;
         ray = Physics2D.Raycast(playerPos, GetMouseDirectionVector(), Mathf.Infinity, layerMask);
         _lineRenderer.SetPosition(0, playerPos);
@@ -103,6 +91,9 @@ public class CPlayerAim : MonoBehaviour
 
     private void Fire()
     {
+        _lineRenderer.enabled = false;
+        _beamRenderer.positionCount = 1;
+        _beamRenderer.enabled = true;
         StartCoroutine(BeamContinue(_transform.position, GetMouseDirectionVector(), true));
     }
 
@@ -120,19 +111,17 @@ public class CPlayerAim : MonoBehaviour
             ray = Physics2D.Raycast(newOrigin, direction, Mathf.Infinity);
         }
 
-        _lineRenderer.material = beamMaterial;
-        _lineRenderer.startWidth = beamWidth;
-        _lineRenderer.endWidth = beamWidth;
 
-        if(ignorePlayer) // if this is the initial beam segment
+        if(_beamRenderer.positionCount == 1) // if this is the initial beam segment
         {
-            _lineRenderer.SetPosition(0, newOrigin);
-            _lineRenderer.SetPosition(1, ray.point);
+            _beamRenderer.positionCount = 2;
+            _beamRenderer.SetPosition(0, newOrigin);
+            _beamRenderer.SetPosition(1, ray.point);
         }
         else
         {
-            _lineRenderer.positionCount++;
-            _lineRenderer.SetPosition(_lineRenderer.positionCount-1, ray.point);
+            _beamRenderer.positionCount++;
+            _beamRenderer.SetPosition(_beamRenderer.positionCount-1, ray.point);
         }
 
 
@@ -148,7 +137,7 @@ public class CPlayerAim : MonoBehaviour
 
                 Time.timeScale=0f;
 
-                yield return new WaitForSecondsRealtime(.15f);
+                yield return new WaitForSecondsRealtime(hitStopDuration);
 
                 Time.timeScale = 1f;
                 isFrozen = false;
@@ -161,6 +150,7 @@ public class CPlayerAim : MonoBehaviour
                         break;
 
                     case "stop":
+                        _beamRenderer.enabled = false;
                         _levelLogic.CheckWin();
                         _player.ExpendCharge();
                         break;
@@ -173,6 +163,7 @@ public class CPlayerAim : MonoBehaviour
         }
         else
         {
+            _beamRenderer.enabled = false;
             _levelLogic.CheckWin();
             _player.ExpendCharge();
         }

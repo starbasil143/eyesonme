@@ -154,7 +154,6 @@ public class CPlayerAim : MonoBehaviour
                 {
                     case "continue":
                         StartCoroutine(BeamContinue(ray.point, direction));
-                        Debug.Log("beam: continue");
                         break;
 
                     case "stop":
@@ -165,6 +164,10 @@ public class CPlayerAim : MonoBehaviour
 
                     case "danger":
                         LoseLevel();
+                        break;
+
+                    case "reflect":
+                        StartCoroutine(BeamContinue(ray.point - direction/10, Vector2.Reflect(direction, ray.normal)));
                         break;
                 }
             }

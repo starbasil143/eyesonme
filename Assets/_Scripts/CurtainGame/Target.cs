@@ -1,7 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CTarget : MonoBehaviour
+
+
+
+public class Target : MonoBehaviour
 {
     public enum TargetType
     {
@@ -18,14 +21,16 @@ public class CTarget : MonoBehaviour
 
     [System.NonSerialized]
     public bool enemy;
+    public bool freezeOnHit;
 
     public TargetType targetType;
     private GameObject TargetParent;
-    private LevelLogic _levelLogic;
+    private CLevelLogic _levelLogic;
+    public GameObject deathObject;
     
     void Awake()
     {
-        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelLogic>();
+        _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<CLevelLogic>();
         TargetParent = transform.parent.gameObject;
         enemy = (targetType==TargetType.Skeleton || 
                  targetType==TargetType.Zombie || 
@@ -38,6 +43,22 @@ public class CTarget : MonoBehaviour
     {
         
     }
+    
+    public void PreFreezeHandleBeam()
+    {
+        if (deathObject != null)
+        {
+            TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
+        }
+
+        switch (targetType)
+        {
+            case TargetType.Mirror:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
+                break;
+        }
+    }
 
     public string HandleBeam()
     {
@@ -47,16 +68,16 @@ public class CTarget : MonoBehaviour
         {
             case TargetType.Skeleton:
 
-                Destroy(TargetParent);
                 _levelLogic.HandleKill();
                 msg = "continue";
+                Destroy(TargetParent);
                 break;
 
             case TargetType.Tank:
 
-                Destroy(TargetParent);
                 _levelLogic.HandleKill();
                 msg = "stop";
+                Destroy(TargetParent);
                 break;
 
             case TargetType.Wall:
@@ -66,24 +87,25 @@ public class CTarget : MonoBehaviour
 
             case TargetType.BreakableWall:
 
-                Destroy(TargetParent);
                 msg = "stop";
+                Destroy(TargetParent);
                 break;
 
             case TargetType.Mirror:
 
+                
                 msg = "reflect";
                 break;
 
             case TargetType.Danger:
 
                 msg = "danger";
-                _levelLogic.HandleLoss();
+                _levelLogic._gameManager.RestartLevel();
                 break;
 
             case TargetType.FlimsyWall:
-                Destroy(TargetParent);
                 msg = "continue";
+                Destroy(TargetParent);
                 break;
 
         }

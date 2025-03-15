@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3090124683602588708}
   - component: {fileID: 4352864130281166338}
   - component: {fileID: -5808932717555482196}
+  - component: {fileID: -1592688657035863800}
   m_Layer: 6
   m_Name: Wall Bad
   m_TagString: Target
@@ -217,6 +218,18 @@ MonoBehaviour:
     - rid: 8869885893528518736
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!114 &-1592688657035863800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907670352502724980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e36a0b0a653de4f894201776e499a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &443984991269987606
 PrefabInstance:
   m_ObjectHideFlags: 0

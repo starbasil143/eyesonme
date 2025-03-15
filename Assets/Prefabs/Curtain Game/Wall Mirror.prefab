@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3090124683602588708}
   - component: {fileID: 4352864130281166338}
   - component: {fileID: -5808932717555482196}
-  - component: {fileID: 5226094923461229489}
+  - component: {fileID: 2169200887824044219}
   m_Layer: 6
-  m_Name: Wall
+  m_Name: Wall Mirror
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: dab1f2892a157d448a66aef9a02e7be6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b88749cb29a8d1d46b4ccb8ac63eea34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 6.31, y: 0.25}
+  m_Size: {x: 5, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -126,17 +126,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0060526133}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.074074075, y: 0.074074075, z: 0.074074075, w: 0.074074075}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.4814814, y: 0.2962963}
-    newSize: {x: 6.31, y: 0.25}
+    newSize: {x: 5, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 1
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.33420128}
+  m_Size: {x: 5, y: 0.25}
   m_EdgeRadius: 0
 --- !u!50 &4352864130281166338
 Rigidbody2D:
@@ -201,7 +201,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 3.1450043, y: 0.11500549, z: 0}
+      m_Extent: {x: 2.4900055, y: 0.11500549, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.01
     m_FlipX: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
     - rid: 8869885893528518736
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
---- !u!114 &5226094923461229489
+--- !u!114 &2169200887824044219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,11 +240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2308981466755771611, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: targetType
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2308981466755771611, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: freezeOnHit
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8531614831600650574, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: m_LocalScale.x
@@ -256,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8531614831600650574, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8531614831600650574, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1067,6 +1067,27 @@ MonoBehaviour:
       Data3: 1039624350
       Data4: 2111894538
     Path: event:/SFX/UI/StartGame
+  sfx_ping:
+    Guid:
+      Data1: -1232047850
+      Data2: 1109797323
+      Data3: 1596107401
+      Data4: 789684522
+    Path: event:/SFX/General/Ping
+  sfx_smash:
+    Guid:
+      Data1: -1963922608
+      Data2: 1338838828
+      Data3: 1394891183
+      Data4: 1283009922
+    Path: event:/SFX/General/Smash
+  sfx_curtain_lift:
+    Guid:
+      Data1: -972867497
+      Data2: 1187334415
+      Data3: 325549758
+      Data4: 195946295
+    Path: event:/SFX/General/Curtain Lift
   sfx_fill:
     Guid:
       Data1: 1482661411
@@ -1074,13 +1095,41 @@ MonoBehaviour:
       Data3: -1851670635
       Data4: 1469877262
     Path: event:/SFX/General/Fill
-  sfx_cheers:
+  sfx_audience_murmur:
     Guid:
-      Data1: 6453230
-      Data2: 1302678866
-      Data3: 1467151030
-      Data4: -1311664026
-    Path: event:/SFX/General/Cheers
+      Data1: -628081701
+      Data2: 1252302180
+      Data3: 1230610588
+      Data4: 325924650
+    Path: event:/SFX/Audience/Murmur
+  sfx_audience_cheer:
+    Guid:
+      Data1: -1723529164
+      Data2: 1308122804
+      Data3: -1941156680
+      Data4: -1053842854
+    Path: event:/SFX/Audience/Cheers
+  sfx_audience_cough:
+    Guid:
+      Data1: -2012195257
+      Data2: 1242420995
+      Data3: -1396079964
+      Data4: -824535098
+    Path: event:/SFX/Audience/Cough
+  sfx_audience_gasp:
+    Guid:
+      Data1: 1326816850
+      Data2: 1268180148
+      Data3: 398929298
+      Data4: 938963790
+    Path: event:/SFX/Audience/Gasp
+  sfx_audience_scream:
+    Guid:
+      Data1: -1184651516
+      Data2: 1156207901
+      Data3: 1191984016
+      Data4: -2085604414
+    Path: event:/SFX/Audience/Scream
   ambience:
     Guid:
       Data1: 1598125727

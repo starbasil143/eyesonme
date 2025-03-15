@@ -31,7 +31,6 @@ public class FMODEvents : MonoBehaviour
     public EventReference sfx_wall_mirror;
 
     [Header("SFX Enemies")]
-    public EventReference sfx_ping;
     public EventReference sfx_skeleton;
     public EventReference sfx_zombie;
     public EventReference sfx_revenant;
@@ -43,8 +42,17 @@ public class FMODEvents : MonoBehaviour
     public EventReference sfx_startgame;
     
     [Header("SFX General")]
+    public EventReference sfx_ping;
+    public EventReference sfx_smash;
+    public EventReference sfx_curtain_lift;
     public EventReference sfx_fill;
-    public EventReference sfx_cheers;
+
+    [Header("SFX Audience")]
+    public EventReference sfx_audience_murmur;
+    public EventReference sfx_audience_cheer;
+    public EventReference sfx_audience_cough;
+    public EventReference sfx_audience_gasp;
+    public EventReference sfx_audience_scream;
 
     [Header("Ambience")]
     public EventReference ambience;

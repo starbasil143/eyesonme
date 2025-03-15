@@ -128,7 +128,7 @@ public class CPlayerAim : MonoBehaviour
 
         if (ray.collider.CompareTag("Target"))
         {
-            
+            ray.collider.gameObject.GetComponentInChildren<Target>().PreFreezeHandleBeam();
             
             if (!isFrozen)
             {

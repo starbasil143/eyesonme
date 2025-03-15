@@ -122,15 +122,20 @@ public class CGameManager : MonoBehaviour
 
     public void WinLevel()
     {
-        Debug.Log("level win");
         if (index < levels.Length - 1)
         {
-            NextLevel();
+            StartCoroutine(WinLevelDelay());
         }
         else 
         {
             Debug.Log("no more levels for you");
         }
+    }
+
+    IEnumerator WinLevelDelay()
+    {
+        yield return new WaitForSeconds(.8f);
+        NextLevel();
     }
 
     public void NextLevel()

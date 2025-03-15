@@ -47,9 +47,8 @@ public class Target : MonoBehaviour
     {
         if (deathObject != null)
         {
-            GetComponent<SpriteRenderer>().enabled = false;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_ping, transform.position);
-            Instantiate(deathObject, transform.position, transform.rotation);
+            TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
         }
     }
 

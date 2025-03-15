@@ -35,13 +35,6 @@ public class CGameManager : MonoBehaviour
         _player = currentLevel.GetComponentInChildren<CPlayer>();
     }
 
-    public void CloseLevel()
-    {
-        if (currentLevel != null)
-        {
-            Destroy(currentLevel);
-        }
-    }
 
     public void ImpactFreeze(float duration)
     {
@@ -74,7 +67,7 @@ public class CGameManager : MonoBehaviour
         float transparency = 0f;
         while (transparency < 1)
         {
-            transparency += Time.deltaTime * 7;
+            transparency += Time.deltaTime * 10;
             if (transparency > 1)
             {
                 transparency = 1;
@@ -89,7 +82,7 @@ public class CGameManager : MonoBehaviour
         float t = 0f;
         while (t < 1)
         {
-            t += Time.deltaTime * 2.5f;
+            t += Time.deltaTime * 3f;
             if (t > 1)
             {
                 t = 1;
@@ -98,11 +91,11 @@ public class CGameManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
 
         while (transparency > 0)
         {
-            transparency -= Time.deltaTime * 9;
+            transparency -= Time.deltaTime * 10;
             if (transparency < 0)
             {
                 transparency = 0;
@@ -112,13 +105,26 @@ public class CGameManager : MonoBehaviour
         }
     }
 
+
     public void RestartLevel()
     {
-        
-        currentLevel.GetComponent<CLevelLogic>().ClearMessageText();
-        Destroy(currentLevel);
-        currentLevel = Instantiate(levels[index], gameObject.transform);
+        GetComponent<Animator>().Play("c_level_restart");
     }
+
+    public void ClearMessage()
+    {
+        currentLevel.GetComponent<CLevelLogic>().ClearMessageText();
+    }
+
+    public void CloseLevel()
+    {
+        ClearMessage();
+        if (currentLevel != null)
+        {
+            Destroy(currentLevel);
+        }
+    }
+
 
     public void WinLevel()
     {

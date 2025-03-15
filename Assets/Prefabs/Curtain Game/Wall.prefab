@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
-  m_Priority: 0
+  m_Priority: 1
   m_ComponentVersion: 5
-  m_HasRenderer: 0
+  m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
@@ -207,10 +207,10 @@ MonoBehaviour:
     m_FlipY: 0
     m_InitialTrim: 0.01
   m_CastingOption: 1
-  m_PreviousTrimEdge: 0
-  m_PreviousEdgeProcessing: -1
-  m_PreviousShadowCastingSource: -1
-  m_PreviousShadowShape2DSource: {fileID: 0}
+  m_PreviousTrimEdge: 0.01
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 3153446468123968879}
   references:
     version: 2
     RefIds:
@@ -228,6 +228,10 @@ PrefabInstance:
     - target: {fileID: 2308981466755771611, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: targetType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308981466755771611, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
+      propertyPath: freezeOnHit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8531614831600650574, guid: 4fccef08505f8c842b47c81ff8b6b411, type: 3}
       propertyPath: m_LocalScale.x

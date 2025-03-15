@@ -21,6 +21,7 @@ public class Target : MonoBehaviour
 
     [System.NonSerialized]
     public bool enemy;
+    public bool freezeOnHit;
 
     public TargetType targetType;
     private GameObject TargetParent;

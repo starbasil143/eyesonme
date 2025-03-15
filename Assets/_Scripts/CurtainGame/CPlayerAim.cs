@@ -132,16 +132,24 @@ public class CPlayerAim : MonoBehaviour
             
             if (!isFrozen)
             {
-                isFrozen = true;
-                float timeToReturnTo = Time.timeScale;
+                if (ray.collider.gameObject.GetComponentInChildren<Target>().freezeOnHit)
+                {
+                    isFrozen = true;
+                    float timeToReturnTo = Time.timeScale;
 
-                Time.timeScale=0f;
+                    Time.timeScale=0f;
 
-                yield return new WaitForSecondsRealtime(hitStopDuration);
+                    yield return new WaitForSecondsRealtime(hitStopDuration);
 
-                Time.timeScale = 1f;
-                isFrozen = false;
+                    Time.timeScale = 1f;
+                    isFrozen = false;
+                }
 
+
+                
+                yield return new WaitForSeconds(.06f);
+
+                
                 switch (ray.collider.GetComponentInChildren<Target>().HandleBeam())
                 {
                     case "continue":

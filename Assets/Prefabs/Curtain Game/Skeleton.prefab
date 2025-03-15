@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e637d10d978fb4eb3c380b7ecb6b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freezeOnHit: 1
   targetType: 0
   deathObject: {fileID: 3219545375762689971, guid: dac60859675d19e418bb253a60bc544b, type: 3}
 --- !u!1 &3219545375762689971

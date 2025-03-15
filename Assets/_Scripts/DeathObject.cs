@@ -11,7 +11,7 @@ public class DeathObject : MonoBehaviour
     IEnumerator ExplodeDie()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_ping, transform.position);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.01f);
 
         
         AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_smash, transform.position);

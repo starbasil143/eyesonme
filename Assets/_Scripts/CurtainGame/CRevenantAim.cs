@@ -95,7 +95,6 @@ public class CRevenantAim : MonoBehaviour
                     case "stop":
                         _beamRenderer.enabled = false;
                         _levelLogic.CheckWin();
-                        _player.ExpendCharge();
                         break;
 
                     case "danger":

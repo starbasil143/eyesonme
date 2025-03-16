@@ -51,6 +51,12 @@ public class CLevelLogic : MonoBehaviour
 
     public void CheckWin()
     {
+        StartCoroutine(CheckWinDelay());
+    }
+
+    IEnumerator CheckWinDelay()
+    {
+        yield return new WaitForSeconds(.5f);
         if (enemiesRemaining == 0)
         {
             ClearMessageText();

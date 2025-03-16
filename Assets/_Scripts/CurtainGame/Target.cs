@@ -32,6 +32,7 @@ public class Target : MonoBehaviour
     public CGameManager _gameManager;
     public bool zombieActive = false;
     private GameObject _player;
+    public GameObject skeletonPrefab;
     
     void Awake()
     {
@@ -103,9 +104,11 @@ public class Target : MonoBehaviour
 
     IEnumerator ZombieActiveCoroutine()
     {
-        yield return new WaitForSeconds(.2f);
-        zombieActive = true;
+        yield return new WaitForSeconds(.3f);
+        Instantiate(skeletonPrefab, transform.position, transform.rotation, _levelLogic.gameObject.transform);
+        Destroy(transform.parent.gameObject);
     }
+        
 
     void ShootAtPlayer()
     {
@@ -117,6 +120,7 @@ public class Target : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         Vector2 directionToPlayer = (_player.transform.position - transform.position).normalized;
         GetComponent<CRevenantAim>()._beamRenderer.positionCount = 1;
+        GetComponent<CRevenantAim>()._beamRenderer.enabled = true;
         StartCoroutine(GetComponent<CRevenantAim>().BeamContinue((Vector2)transform.position + directionToPlayer/3, directionToPlayer, false, true));
     }
 
@@ -145,8 +149,24 @@ public class Target : MonoBehaviour
 
         if (deathObject != null)
         {
-            TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
+            switch (targetType)
+            {
+                case TargetType.Skeleton:
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
+                    TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
+                    break;
+                case TargetType.Tank:
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
+                    TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
+                    break;
+                case TargetType.Revenant:
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
+                    TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
+                    break;
+            }
         }
 
         switch (targetType)
@@ -172,9 +192,8 @@ public class Target : MonoBehaviour
 
             case TargetType.Zombie:
 
-                _levelLogic.HandleKill();
                 msg = "continue";
-                Destroy(TargetParent);
+
                 break;
 
             case TargetType.Revenant:

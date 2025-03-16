@@ -14,6 +14,7 @@ public class CPlayerAim : MonoBehaviour
     public bool isFrozen = false;
 
     private LayerMask layerMask;
+    private LayerMask layerMaskWithPlayer;
 
     [SerializeField] private LineRenderer _lineRenderer;
 
@@ -30,6 +31,7 @@ public class CPlayerAim : MonoBehaviour
         _levelLogic = _player._levelLogic;
         _gameManager = _player._gameManager;
         layerMask = LayerMask.GetMask("Target");
+        layerMaskWithPlayer = LayerMask.GetMask("Target", "Player");
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
@@ -109,7 +111,7 @@ public class CPlayerAim : MonoBehaviour
         }
         else
         {
-            ray = Physics2D.Raycast(newOrigin, direction, Mathf.Infinity);
+            ray = Physics2D.Raycast(newOrigin, direction, Mathf.Infinity, layerMaskWithPlayer);
         }
 
 

@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e637d10d978fb4eb3c380b7ecb6b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeOnHit: 1
+  freezeOnHit: 0
   targetType: 1
-  deathObject: {fileID: 3219545375762689971, guid: dac60859675d19e418bb253a60bc544b, type: 3}
+  deathObject: {fileID: 0}
+  _gameManager: {fileID: 0}
+  zombieActive: 0
+  skeletonPrefab: {fileID: 3219545375762689971, guid: a54528245f878a1479b7e24597c5e7dc, type: 3}
 --- !u!1 &3219545375762689971
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +60,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7867368824421463272}
   - component: {fileID: 5073754678753158273}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EZombie
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183757095752966277}
   - component: {fileID: 8733734310257225018}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EnemyGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

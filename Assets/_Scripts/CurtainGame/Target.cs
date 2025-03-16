@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class Target : MonoBehaviour
         FlimsyWall,
         Revenant,
         Tank,
+        Player,
     }
 
     [System.NonSerialized]
@@ -27,15 +29,95 @@ public class Target : MonoBehaviour
     private GameObject TargetParent;
     private CLevelLogic _levelLogic;
     public GameObject deathObject;
+    public CGameManager _gameManager;
+    public bool zombieActive = false;
+    private GameObject _player;
     
     void Awake()
     {
         _levelLogic = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<CLevelLogic>();
+        _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<CGameManager>();
+        _player = GameObject.FindGameObjectWithTag("Player");
         TargetParent = transform.parent.gameObject;
         enemy = (targetType==TargetType.Skeleton || 
                  targetType==TargetType.Zombie || 
                  targetType==TargetType.Revenant ||
                  targetType==TargetType.Tank);
+                 
+        switch (targetType)
+        {
+            case TargetType.Skeleton:
+
+                
+                break;
+
+            case TargetType.Zombie:
+
+                CGameManager.onBeamFire += BecomeZombieActive;
+                break;
+
+            case TargetType.Revenant:
+
+                CGameManager.onBeamFire += ShootAtPlayer;
+                break;
+
+            case TargetType.Tank:
+
+                
+                break;
+
+            case TargetType.Wall:
+
+                
+                break;
+
+            case TargetType.BreakableWall:
+
+                
+                break;
+
+            case TargetType.Mirror:
+
+                
+                break;
+
+            case TargetType.Danger:
+
+                
+                break;
+
+            case TargetType.FlimsyWall:
+                
+                
+                break;
+
+        }
+
+        
+    }
+
+    void BecomeZombieActive()
+    {
+        StartCoroutine(ZombieActiveCoroutine());
+    }
+
+    IEnumerator ZombieActiveCoroutine()
+    {
+        yield return new WaitForSeconds(.2f);
+        zombieActive = true;
+    }
+
+    void ShootAtPlayer()
+    {
+        StartCoroutine(ShootAtPlayerCoroutine());
+    }
+
+    IEnumerator ShootAtPlayerCoroutine()
+    {
+        yield return new WaitForSeconds(.2f);
+        Vector2 directionToPlayer = (_player.transform.position - transform.position).normalized;
+        GetComponent<CRevenantAim>()._beamRenderer.positionCount = 1;
+        StartCoroutine(GetComponent<CRevenantAim>().BeamContinue((Vector2)transform.position + directionToPlayer/3, directionToPlayer, false, true));
     }
 
     // Update is called once per frame
@@ -43,9 +125,24 @@ public class Target : MonoBehaviour
     {
         
     }
-    
+
+    void OnDestroy()
+    {
+        switch (targetType)
+        {
+            case TargetType.Zombie:
+                CGameManager.onBeamFire -= BecomeZombieActive;
+                break;
+
+            case TargetType.Revenant:
+                CGameManager.onBeamFire -= ShootAtPlayer;     
+                break;   
+        }
+    }
+
     public void PreFreezeHandleBeam()
     {
+
         if (deathObject != null)
         {
             TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -73,6 +170,21 @@ public class Target : MonoBehaviour
                 Destroy(TargetParent);
                 break;
 
+            case TargetType.Zombie:
+
+                _levelLogic.HandleKill();
+                msg = "continue";
+                Destroy(TargetParent);
+                break;
+
+            case TargetType.Revenant:
+
+                _levelLogic.HandleKill();
+                msg = "continue";
+                Destroy(TargetParent);
+                break;
+
+
             case TargetType.Tank:
 
                 _levelLogic.HandleKill();
@@ -93,7 +205,6 @@ public class Target : MonoBehaviour
 
             case TargetType.Mirror:
 
-                
                 msg = "reflect";
                 break;
 
@@ -108,6 +219,9 @@ public class Target : MonoBehaviour
                 Destroy(TargetParent);
                 break;
 
+            case TargetType.Player:
+                msg = "stop";
+                break;
         }
 
         return msg;

@@ -15,11 +15,20 @@ public class CGameManager : MonoBehaviour
     public Animator animator;
     bool isFrozen = false;
 
+    public delegate void OnBeamFire();
+    public static event OnBeamFire onBeamFire;
+
+
     private void Start()
     {
         animator = GetComponent<Animator>();
 
         //StartGame();   
+    }
+
+    public void BeamFired()
+    {
+        onBeamFire?.Invoke();
     }
 
     public void StartFirstLevel()

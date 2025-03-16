@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CPlayerAim : MonoBehaviour
+public class CRevenantAim : MonoBehaviour
 {
     public GameObject PlayerParent;
     public Camera MainCamera;
@@ -15,87 +15,19 @@ public class CPlayerAim : MonoBehaviour
 
     private LayerMask layerMask;
 
-    [SerializeField] private LineRenderer _lineRenderer;
-
-    [SerializeField] private LineRenderer _beamRenderer;
+    public LineRenderer _beamRenderer;
     public float hitStopDuration = .2f;
 
 
     void Awake()
     {
-        PlayerParent = transform.parent.gameObject;
+        PlayerParent = GameObject.FindGameObjectWithTag("Player");
         _player = PlayerParent.GetComponentInChildren<CPlayer>();
         _transform = PlayerParent.transform;
-        _lineRenderer.positionCount = 2;
         _levelLogic = _player._levelLogic;
         _gameManager = _player._gameManager;
         layerMask = LayerMask.GetMask("Target");
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-    }
-
-
-    void Update()
-    {
-        if (!isFrozen)
-        {
-            if (InputManager.Ready)
-            {
-                ReadyUpdate();
-
-                if (!isReady)
-                {
-                    isReady = true;
-                    _lineRenderer.enabled = true;
-                }
-            }
-            else
-            {
-                if (isReady)
-                {
-                    isReady = false;
-                    _lineRenderer.enabled = false;
-                }
-            }
-
-            if (InputManager.Fire && isReady)
-            {
-                if (_player.GetRemainingCharges() >= 1)
-                {
-                    Fire();
-                }
-                else
-                {
-                    Debug.Log("fizzle.....");
-                }
-            }
-
-            if (InputManager.Reset)
-            {
-                _gameManager.RestartLevel();
-            }   
-        }
-    
-    }
-
-
-    private void ReadyUpdate()
-    { 
-        Vector2 playerPos = _transform.position;
-
-        RaycastHit2D ray;
-        ray = Physics2D.Raycast(playerPos, GetMouseDirectionVector(), Mathf.Infinity, layerMask);
-        _lineRenderer.SetPosition(0, playerPos);
-        _lineRenderer.SetPosition(1, ray.point);
-
-    }
-
-    private void Fire()
-    {
-        _lineRenderer.enabled = false;
-        _beamRenderer.positionCount = 1;
-        _beamRenderer.enabled = true;
-        StartCoroutine(BeamContinue(_transform.position, GetMouseDirectionVector(), true, true));
-        _gameManager.BeamFired();
     }
 
     public IEnumerator BeamContinue(Vector2 newOrigin, Vector2 direction, bool ignorePlayer = false, bool shootNoise = false)
@@ -183,19 +115,7 @@ public class CPlayerAim : MonoBehaviour
         
         
     }
-    
-    
-    
 
-    private Vector2 GetMouseDirectionVector()
-    {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(InputManager.Aim);
-        Vector2 playerPos = _transform.position;
-        Vector2 differenceVector = mousePos - playerPos;
-        Vector2 directionVector = differenceVector.normalized;
-
-        return directionVector;
-    }
 
     private void LoseLevel()
     {

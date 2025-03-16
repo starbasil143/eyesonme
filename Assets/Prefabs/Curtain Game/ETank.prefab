@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeOnHit: 1
-  targetType: 0
+  targetType: 8
   deathObject: {fileID: 3219545375762689971, guid: dac60859675d19e418bb253a60bc544b, type: 3}
 --- !u!1 &3219545375762689971
 GameObject:
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 7867368824421463272}
   - component: {fileID: 5073754678753158273}
   m_Layer: 6
-  m_Name: Skeleton
+  m_Name: ETank
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -836262319, guid: 3a0d833e51ccf434398101e47d5d5e8c, type: 3}
+  m_Sprite: {fileID: -1935086741, guid: 3a0d833e51ccf434398101e47d5d5e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

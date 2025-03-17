@@ -185,8 +185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36, y: 364}
-  m_SizeDelta: {x: 906.8, y: 132.41}
+  m_AnchoredPosition: {x: 0, y: 184}
+  m_SizeDelta: {x: 1200, y: 537.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107314863
 MonoBehaviour:
@@ -210,8 +210,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a5cc29929780484469809daa6dacfef5, type: 2}
+  m_sharedMaterial: {fileID: 6356946661926172341, guid: a5cc29929780484469809daa6dacfef5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -235,19 +235,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44
-  m_fontSizeBase: 44
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_characterSpacing: -8.4
+  m_wordSpacing: -6.91
+  m_lineSpacing: -4.61
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -389,13 +389,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 7743873855784849833, guid: d937384d5e63b2f408f4146350fb9861, type: 3}
-  - {fileID: 7743873855784849833, guid: 8797c5b1036517b4ca8e2a9997282651, type: 3}
-  - {fileID: 7743873855784849833, guid: 2442aa51d5bb3984fb32573a10ebc673, type: 3}
-  - {fileID: 7743873855784849833, guid: 1c09e0f942c6d33408e0d362940e7c80, type: 3}
   - {fileID: 7743873855784849833, guid: cfc77c9bbb2fc4743b5e4fe655800820, type: 3}
   - {fileID: 7743873855784849833, guid: 11ea78c96e14d2f478ffbff781195ce4, type: 3}
   - {fileID: 7743873855784849833, guid: f12b8b01076328f4095c25e24345a716, type: 3}
+  - {fileID: 7743873855784849833, guid: 1c09e0f942c6d33408e0d362940e7c80, type: 3}
+  - {fileID: 7743873855784849833, guid: 2442aa51d5bb3984fb32573a10ebc673, type: 3}
+  - {fileID: 7743873855784849833, guid: 8797c5b1036517b4ca8e2a9997282651, type: 3}
+  - {fileID: 7743873855784849833, guid: d937384d5e63b2f408f4146350fb9861, type: 3}
   currentLevel: {fileID: 0}
   progressAmount: 0
   progressBarFill: {fileID: 147019753}
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   - {fileID: 154850910}
   - {fileID: 178257006}
   - {fileID: 1525732373}
-  typingSpeed: 0.02
+  typingSpeed: 0.03
   _timelineManager: {fileID: 0}
   textUnselectedColor: {r: 1, g: 1, b: 1, a: 1}
   textSelectedColor: {r: 0.70440245, g: 0.34139103, b: 0.3123293, a: 1}
@@ -2471,7 +2471,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -185199541
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1602848046
@@ -3234,7 +3234,7 @@ PlayableDirector:
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
-  m_InitialTime: 3
+  m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -3127207906776800616, guid: d40802105926aec4a85951c70025a888, type: 2}
     value: {fileID: 792679800}

@@ -17,6 +17,9 @@ public class CLevelLogic : MonoBehaviour
     private float typingSpeedMultiplier = 1f;
 
 
+    public bool tutorialLevel;
+
+
     // public GameObject goalObject;
 
 
@@ -71,7 +74,7 @@ public class CLevelLogic : MonoBehaviour
     }
 
 
-    private IEnumerator DisplayLine(string line, float delay)
+    public IEnumerator DisplayLine(string line, float delay)
     {
         yield return new WaitForSeconds(delay);
         messageText.text = line;

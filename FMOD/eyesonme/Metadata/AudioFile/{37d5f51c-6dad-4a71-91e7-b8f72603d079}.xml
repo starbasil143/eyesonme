@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{37d5f51c-6dad-4a71-91e7-b8f72603d079}">
+		<property name="assetPath">
+			<value>aim.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.4563265306122446</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{99080615-9386-40e6-9bde-83d71d2ba15c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -42,28 +42,20 @@ public class TutorialManager : MonoBehaviour
                 if (InputManager.Ready)
                 {
                     index = 3;
-                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", 0));
+                    StartCoroutine(_levelLogic.DisplayLine("Click while aiming to fire", 0));
                 }
             break;
 
-            case 3: 
-                if (InputManager.Ready)
-                {
-                    index = 4;
-                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", 0));
-                }
-            break;
-
-            case 4:
+            case 3:
                 if (InputManager.Fire && InputManager.Ready)
                 {
-                    index = 5;
+                    index = 4;
                     StartCoroutine(WaitAfterBeam());
                 }
             break;
 
-            case 6:
-                index = 7;
+            case 5:
+                index = 6;
                 _enemy.SetActive(true);
 
                 StartCoroutine(_levelLogic.DisplayLine("Target the circles", 0));
@@ -76,6 +68,6 @@ public class TutorialManager : MonoBehaviour
     IEnumerator WaitAfterBeam()
     {
         yield return new WaitForSeconds(.8f);
-        index = 6;
+        index = 5;
     }
 }

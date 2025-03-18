@@ -9,6 +9,8 @@ public class TimelineManager : MonoBehaviour
     public List<TextAsset> dialogueAssets;
     public List<GameObject> objectsToDisable;
     public List<GameObject> objectsToEnable;
+    public GameObject _curtain;
+    public GameObject _stage;
     public CGameManager _gameManager;
     public string associatedFlag;
     
@@ -79,6 +81,16 @@ public class TimelineManager : MonoBehaviour
     public void StartPuzzle()
     {
         _gameManager.StartFirstLevel();
+    }
+
+    public void OpenCurtain()
+    {
+        _curtain.GetComponent<Animator>().Play("curtain_open_full");
+    }
+
+    public void CloseCurtain()
+    {
+        _curtain.GetComponent<Animator>().Play("curtain_close_full");
     }
 
     public void SetMusic()

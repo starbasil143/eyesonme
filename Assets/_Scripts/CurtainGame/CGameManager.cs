@@ -150,15 +150,26 @@ public class CGameManager : MonoBehaviour
         }
         else 
         {
-            Debug.Log("no more levels for you");
+            if (!winDelayRunning)
+            {
+                StartCoroutine(WinAllLevelsDelay());
+            }
         }
     }
 
     IEnumerator WinLevelDelay()
     {
         winDelayRunning = true;
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.4f);
         NextLevel();
+        winDelayRunning = false;
+    }
+
+    IEnumerator WinAllLevelsDelay()
+    {
+        winDelayRunning = true;
+        yield return new WaitForSeconds(.4f);
+        //NextLevel();
         winDelayRunning = false;
     }
 

@@ -13,6 +13,7 @@ TagManager:
   - DialogueManager
   - GameManager
   - LevelMessage
+  - ResetTextPanel
   layers:
   - Default
   - TransparentFX

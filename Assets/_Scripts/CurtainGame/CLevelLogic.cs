@@ -32,6 +32,8 @@ public class CLevelLogic : MonoBehaviour
         _gameManager = transform.parent.gameObject.GetComponent<CGameManager>();
         enemiesRemaining = enemyCount;
         messageText = GameObject.FindGameObjectWithTag("LevelMessage").GetComponent<TextMeshProUGUI>();
+        GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetInteger("RemainingCharges", chargeLimit);
+
 
         if (levelStartMessage != null && levelStartMessage != "")
         {
@@ -47,6 +49,7 @@ public class CLevelLogic : MonoBehaviour
     {
         if (InputManager.Reset && restartAllowed)
         {
+            GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("LevelReset");
             _gameManager.RestartLevel();
         }   
     }

@@ -65,14 +65,12 @@ public class CPlayerAim : MonoBehaviour
                 {
                     Fire();
                 }
-                else
-                {
-                    Debug.Log("fizzle.....");
-                }
+                
             }
 
             
         }
+
     
     }
 
@@ -96,6 +94,16 @@ public class CPlayerAim : MonoBehaviour
         StartCoroutine(BeamContinue(_transform.position, GetMouseDirectionVector(), true, true));
         _gameManager.BeamFired();
     }
+    
+    // private IEnumerator CheckExpended()
+    // {
+    //     if (_player.GetRemainingCharges() <= 0)
+    //     {
+    //         Debug.Log("id");
+    //         yield return new WaitForSeconds(1.5f);
+    //         GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().Play("c_reset_text", 0, 0f);
+    //     }
+    // }
 
     public IEnumerator BeamContinue(Vector2 newOrigin, Vector2 direction, bool ignorePlayer = false, bool shootNoise = false)
     {
@@ -134,6 +142,7 @@ public class CPlayerAim : MonoBehaviour
             {
                 if (ray.collider.gameObject.GetComponentInChildren<Target>().freezeOnHit)
                 {
+                    _levelLogic.restartAllowed = false;
                     isFrozen = true;
                     float timeToReturnTo = Time.timeScale;
 
@@ -143,6 +152,7 @@ public class CPlayerAim : MonoBehaviour
 
                     Time.timeScale = 1f;
                     isFrozen = false;
+                    _levelLogic.restartAllowed = true;
                 }
                 
 
@@ -161,6 +171,7 @@ public class CPlayerAim : MonoBehaviour
                         _beamRenderer.enabled = false;
                         _levelLogic.CheckWin();
                         _player.ExpendCharge();
+                        // StartCoroutine(CheckExpended());
                         break;
 
                     case "danger":

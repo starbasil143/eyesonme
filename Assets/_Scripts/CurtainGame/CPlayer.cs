@@ -7,6 +7,7 @@ public class CPlayer : MonoBehaviour
     public CGameManager _gameManager;
     public CLevelLogic _levelLogic;
     private GameObject ChargesPanel;
+    private Animator _resetTextAnimator;
 
 
     private int remainingCharges;
@@ -19,6 +20,7 @@ public class CPlayer : MonoBehaviour
         _levelLogic = _transform.parent.GetComponent<CLevelLogic>();
         remainingCharges = _levelLogic.chargeLimit;
         _gameManager._player = this;
+        _resetTextAnimator = GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>();
         // ChargesPanel = GameObject.FindGameObjectWithTag("ChargesPanel");
         // foreach (ChargeIcon chargeIcon in ChargesPanel.GetComponentsInChildren<ChargeIcon>())
         // {
@@ -40,6 +42,7 @@ public class CPlayer : MonoBehaviour
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;
+        _resetTextAnimator.SetInteger("RemainingCharges", remainingCharges);
 
         // foreach (ChargeIcon chargeIcon in ChargesPanel.GetComponentsInChildren<ChargeIcon>())
         // {

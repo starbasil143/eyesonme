@@ -23,6 +23,9 @@ public class CGameManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_audience_murmur, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.ambience, transform.position);
+
         //StartGame();   
     }
 

@@ -16,6 +16,8 @@ public class CLevelLogic : MonoBehaviour
     public float typingSpeed = 0.02f;
     private float typingSpeedMultiplier = 1f;
 
+    public bool restartAllowed = true;
+
 
     public bool tutorialLevel;
 
@@ -39,6 +41,14 @@ public class CLevelLogic : MonoBehaviour
         // goalObject = GameObject.FindGameObjectWithTag("Goal");
         // Color goalcolor = goalObject.GetComponentInChildren<SpriteRenderer>().color;
         // goalObject.GetComponentInChildren<SpriteRenderer>().color = new Color(goalcolor.r, goalcolor.g, goalcolor.b, .2f);
+    }
+
+    void Update()
+    {
+        if (InputManager.Reset && restartAllowed)
+        {
+            _gameManager.RestartLevel();
+        }   
     }
 
     public void ClearMessageText()

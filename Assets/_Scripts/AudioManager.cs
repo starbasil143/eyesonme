@@ -94,6 +94,11 @@ public class AudioManager : MonoBehaviour
         return eventInstance;
     }
 
+    public void EnableAmbienceComponent(string ambienceComponent)
+    {
+        
+    }
+
     public void SetMusicArea(MusicArea area)
     {
         musicEventInstance.setParameterByName("area", (float) area);

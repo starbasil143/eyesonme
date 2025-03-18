@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
         _gameManager = GetComponent<CGameManager>();
         _enemy = GetComponentInChildren<CircleCollider2D>().gameObject; //this is stupid
         _enemy.SetActive(false);
+        _levelLogic.restartAllowed = false;
     }
 
     void Update()
@@ -25,7 +26,7 @@ public class TutorialManager : MonoBehaviour
         {
             case 0: 
                 index = 1;
-                StartCoroutine(_levelLogic.DisplayLine("WASD to move", _levelLogic.messageDelay));
+                StartCoroutine(_levelLogic.DisplayLine("WASD to move", 0));
             break;
             
             
@@ -33,7 +34,7 @@ public class TutorialManager : MonoBehaviour
                 if (InputManager.Movement != Vector2.zero)
                 {
                     index = 2;
-                    StartCoroutine(_levelLogic.DisplayLine("SHIFT to aim with mouse", _levelLogic.messageDelay));
+                    StartCoroutine(_levelLogic.DisplayLine("SHIFT to aim with mouse", 0));
                 }
             break;
 
@@ -41,7 +42,7 @@ public class TutorialManager : MonoBehaviour
                 if (InputManager.Ready)
                 {
                     index = 3;
-                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", _levelLogic.messageDelay));
+                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", 0));
                 }
             break;
 
@@ -49,12 +50,12 @@ public class TutorialManager : MonoBehaviour
                 if (InputManager.Ready)
                 {
                     index = 4;
-                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", _levelLogic.messageDelay));
+                    StartCoroutine(_levelLogic.DisplayLine("LEFT MOUSE to fire", 0));
                 }
             break;
 
             case 4:
-                if (InputManager.Fire)
+                if (InputManager.Fire && InputManager.Ready)
                 {
                     index = 5;
                     StartCoroutine(WaitAfterBeam());
@@ -65,7 +66,7 @@ public class TutorialManager : MonoBehaviour
                 index = 7;
                 _enemy.SetActive(true);
 
-                StartCoroutine(_levelLogic.DisplayLine("Target the circles", _levelLogic.messageDelay));
+                StartCoroutine(_levelLogic.DisplayLine("Target the circles", 0));
             break;
 
         }

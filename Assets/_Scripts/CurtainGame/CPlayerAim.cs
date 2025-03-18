@@ -71,10 +71,7 @@ public class CPlayerAim : MonoBehaviour
                 }
             }
 
-            if (InputManager.Reset)
-            {
-                _gameManager.RestartLevel();
-            }   
+            
         }
     
     }

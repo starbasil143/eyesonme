@@ -503,11 +503,7 @@ MonoBehaviour:
   levels:
   - {fileID: 7743873855784849833, guid: cfc77c9bbb2fc4743b5e4fe655800820, type: 3}
   - {fileID: 7743873855784849833, guid: 11ea78c96e14d2f478ffbff781195ce4, type: 3}
-  - {fileID: 7743873855784849833, guid: f12b8b01076328f4095c25e24345a716, type: 3}
-  - {fileID: 7743873855784849833, guid: 1c09e0f942c6d33408e0d362940e7c80, type: 3}
-  - {fileID: 7743873855784849833, guid: 2442aa51d5bb3984fb32573a10ebc673, type: 3}
-  - {fileID: 7743873855784849833, guid: 8797c5b1036517b4ca8e2a9997282651, type: 3}
-  - {fileID: 7743873855784849833, guid: d937384d5e63b2f408f4146350fb9861, type: 3}
+  - {fileID: 7743873855784849833, guid: fb35648e22de0ae489113a95819caf10, type: 3}
   currentLevel: {fileID: 0}
   progressAmount: 0
   progressBarFill: {fileID: 147019753}
@@ -3374,7 +3370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: -232.12}
+  m_AnchoredPosition: {x: 0, y: -232.12}
   m_SizeDelta: {x: 696.57, y: 238.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053875284

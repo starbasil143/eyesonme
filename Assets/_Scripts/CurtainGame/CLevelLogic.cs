@@ -20,6 +20,7 @@ public class CLevelLogic : MonoBehaviour
 
 
     public bool tutorialLevel;
+    private CPlayer _player;
 
 
     // public GameObject goalObject;
@@ -32,8 +33,7 @@ public class CLevelLogic : MonoBehaviour
         _gameManager = transform.parent.gameObject.GetComponent<CGameManager>();
         enemiesRemaining = enemyCount;
         messageText = GameObject.FindGameObjectWithTag("LevelMessage").GetComponent<TextMeshProUGUI>();
-        GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetInteger("RemainingCharges", chargeLimit);
-
+        _player = GetComponentInChildren<CPlayer>();
 
         if (levelStartMessage != null && levelStartMessage != "")
         {
@@ -76,7 +76,12 @@ public class CLevelLogic : MonoBehaviour
         if (enemiesRemaining == 0)
         {
             ClearMessageText();
+            GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("LevelReset");
             _gameManager.WinLevel();
+        }
+        else if (_player.GetRemainingCharges() <= 0)
+        {
+            GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("TextOn");
         }
     }
 

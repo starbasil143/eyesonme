@@ -17,6 +17,7 @@ public class CGameManager : MonoBehaviour
 
     public delegate void OnBeamFire();
     public static event OnBeamFire onBeamFire;
+    private bool winDelayRunning;
 
 
     private void Start()
@@ -142,7 +143,10 @@ public class CGameManager : MonoBehaviour
     {
         if (index < levels.Length - 1)
         {
-            StartCoroutine(WinLevelDelay());
+            if (!winDelayRunning)
+            {
+                StartCoroutine(WinLevelDelay());
+            }
         }
         else 
         {
@@ -152,14 +156,17 @@ public class CGameManager : MonoBehaviour
 
     IEnumerator WinLevelDelay()
     {
+        winDelayRunning = true;
         yield return new WaitForSeconds(.8f);
         NextLevel();
+        winDelayRunning = false;
     }
 
     public void NextLevel()
     {
         Destroy(currentLevel);
         index++;
+        Debug.Log(index);
         animator.Play("c_level_transition");
     }
 

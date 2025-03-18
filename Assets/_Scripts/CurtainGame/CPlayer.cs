@@ -42,7 +42,6 @@ public class CPlayer : MonoBehaviour
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;
-        _resetTextAnimator.SetInteger("RemainingCharges", remainingCharges);
 
         // foreach (ChargeIcon chargeIcon in ChargesPanel.GetComponentsInChildren<ChargeIcon>())
         // {

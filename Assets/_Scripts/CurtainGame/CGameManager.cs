@@ -19,6 +19,9 @@ public class CGameManager : MonoBehaviour
     public static event OnBeamFire onBeamFire;
     private bool winDelayRunning;
 
+    public TimelineManager _winTimeline;
+    public GameObject _filledProgressBar;
+
 
     private void Start()
     {
@@ -104,17 +107,25 @@ public class CGameManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(.25f);
-
-        while (transparency > 0)
+        if (newFillAmount >= 1)
         {
-            transparency -= Time.deltaTime * 10;
-            if (transparency < 0)
+            _filledProgressBar.SetActive(true);
+            animator.SetTrigger("levelWon");
+            progressBarFill.transform.parent.gameObject.GetComponent<CanvasGroup>().alpha = 0;
+        }
+        else
+        {
+            yield return new WaitForSeconds(.25f);
+            while (transparency > 0)
             {
-                transparency = 0;
+                transparency -= Time.deltaTime * 10;
+                if (transparency < 0)
+                {
+                    transparency = 0;
+                }
+                progressBarFill.transform.parent.gameObject.GetComponent<CanvasGroup>().alpha = transparency;
+                yield return null;
             }
-            progressBarFill.transform.parent.gameObject.GetComponent<CanvasGroup>().alpha = transparency;
-            yield return null;
         }
     }
 
@@ -152,7 +163,7 @@ public class CGameManager : MonoBehaviour
         {
             if (!winDelayRunning)
             {
-                StartCoroutine(WinAllLevelsDelay());
+                StartCoroutine(WinLevelDelay());
             }
         }
     }
@@ -165,21 +176,28 @@ public class CGameManager : MonoBehaviour
         winDelayRunning = false;
     }
 
-    IEnumerator WinAllLevelsDelay()
-    {
-        winDelayRunning = true;
-        yield return new WaitForSeconds(.4f);
-        //NextLevel();
-        winDelayRunning = false;
-    }
 
     public void NextLevel()
     {
         Destroy(currentLevel);
         index++;
-        Debug.Log(index);
         animator.Play("c_level_transition");
     }
+    // IEnumerator WinAllLevelsDelay()
+    // {
+    //     winDelayRunning = true;
+    //     yield return new WaitForSeconds(.4f);
+    //     LastLevelComplete();
+    //     winDelayRunning = false;
+    // }
+
+    public void LastLevelComplete()
+    {
+        Destroy(currentLevel);
+        _winTimeline.gameObject.SetActive(true);
+    }
+
+    
 
  
 }

@@ -83,6 +83,11 @@ public class TimelineManager : MonoBehaviour
         _gameManager.StartFirstLevel();
     }
 
+    public void ClosePuzzle()
+    {
+        _gameManager.GetComponent<Animator>().SetTrigger("turnOff");
+    }
+
     public void OpenCurtain()
     {
         _curtain.GetComponent<Animator>().Play("curtain_open_full");

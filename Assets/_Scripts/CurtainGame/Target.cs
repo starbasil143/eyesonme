@@ -152,17 +152,14 @@ public class Target : MonoBehaviour
             switch (targetType)
             {
                 case TargetType.Skeleton:
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
                     TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
                     break;
                 case TargetType.Tank:
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
                     TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
                     break;
                 case TargetType.Revenant:
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
                     TargetParent.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     Instantiate(deathObject, transform.position, transform.rotation, TargetParent.transform.parent);
                     break;

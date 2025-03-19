@@ -1211,6 +1211,13 @@ MonoBehaviour:
       Data3: -1851670635
       Data4: 1469877262
     Path: event:/SFX/General/Fill
+  sfx_heal:
+    Guid:
+      Data1: 1105091947
+      Data2: 1128794332
+      Data3: -994680897
+      Data4: -40775772
+    Path: event:/SFX/General/Heal
   sfx_audience_murmur:
     Guid:
       Data1: 1515070443
@@ -1220,10 +1227,10 @@ MonoBehaviour:
     Path: event:/SFX/Audience/Murmur
   sfx_audience_cheer:
     Guid:
-      Data1: -1723529164
-      Data2: 1308122804
-      Data3: -1941156680
-      Data4: -1053842854
+      Data1: 1640604461
+      Data2: 1304868941
+      Data3: -2010483054
+      Data4: -1350308469
     Path: event:/SFX/Audience/Cheers
   sfx_audience_cough:
     Guid:
@@ -2281,6 +2288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191420339}
   - component: {fileID: 1191420338}
+  - component: {fileID: 1191420340}
   m_Layer: 0
   m_Name: GreenGuy
   m_TagString: Untagged
@@ -2358,6 +2366,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1191420340
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191420337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1221918088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,6 +2645,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 016b3c52ea145d64b9f2efa3f3f575ca, type: 2}
     - {fileID: 11400000, guid: 5eecf465d8db9b14b8fdea0d90ba5cfc, type: 2}
     - {fileID: 11400000, guid: 579fdbf9b3dd1b54d8873285d9689fd6, type: 2}
+    - {fileID: 11400000, guid: 3b3bcaeb136213c41af11dd26564584d, type: 2}
+    - {fileID: 11400000, guid: c3f443c0b8f9cd14295a7bbbf2a2fcf7, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2796,6 +2828,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1470784756}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: ClosePuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1470784756}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: CloseCurtain
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!320 &1470784755
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -2805,7 +2865,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1470784752}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: d40802105926aec4a85951c70025a888, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -2817,8 +2877,16 @@ PlayableDirector:
     value: {fileID: 1470784754}
   - key: {fileID: -7579727270446522220, guid: d40802105926aec4a85951c70025a888, type: 2}
     value: {fileID: 1407652357}
-  - key: {fileID: 3767293081938810411, guid: d40802105926aec4a85951c70025a888, type: 2}
-    value: {fileID: 577840890}
+  - key: {fileID: -180611993732660657, guid: d40802105926aec4a85951c70025a888, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: -7579727270446522220, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -180611993732660657, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: -6245329963991638743, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1470784754}
+  - key: {fileID: -3127207906776800616, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 792679800}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1470784756
@@ -2833,7 +2901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e424351e369e544590d7816dc64f9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAssets: []
+  dialogueAssets:
+  - {fileID: 4900000, guid: 891fc93cd40f1a949972a7e6b03be62a, type: 3}
+  - {fileID: 4900000, guid: 3b9e646f55305db4eaed6a6f998d12de, type: 3}
   objectsToDisable: []
   objectsToEnable: []
   _curtain: {fileID: 792679797}
@@ -4235,6 +4305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathObject: {fileID: 3219545375762689971, guid: 4375b214250866949a1d1db1ed3476e4, type: 3}
+  _winCutscene: {fileID: 1470784756}
 --- !u!1 &2065240256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4396,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2115606057}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: d40802105926aec4a85951c70025a888, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: c1dc92773a952274f827ed94a18b7dee, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4337,8 +4408,16 @@ PlayableDirector:
     value: {fileID: 2115606061}
   - key: {fileID: -7579727270446522220, guid: d40802105926aec4a85951c70025a888, type: 2}
     value: {fileID: 1407652357}
-  - key: {fileID: 3767293081938810411, guid: d40802105926aec4a85951c70025a888, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 577840890}
+  - key: {fileID: -6245329963991638743, guid: c1dc92773a952274f827ed94a18b7dee, type: 2}
+    value: {fileID: 2115606061}
+  - key: {fileID: -3127207906776800616, guid: c1dc92773a952274f827ed94a18b7dee, type: 2}
+    value: {fileID: 792679800}
+  - key: {fileID: 3767293081938810411, guid: c1dc92773a952274f827ed94a18b7dee, type: 2}
+    value: {fileID: 577840890}
+  - key: {fileID: -7579727270446522220, guid: c1dc92773a952274f827ed94a18b7dee, type: 2}
+    value: {fileID: 1407652357}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &2115606060

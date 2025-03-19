@@ -46,6 +46,7 @@ public class FMODEvents : MonoBehaviour
     public EventReference sfx_smash;
     public EventReference sfx_curtain_lift;
     public EventReference sfx_fill;
+    public EventReference sfx_heal;
 
     [Header("SFX Audience")]
     public EventReference sfx_audience_murmur;

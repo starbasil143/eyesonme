@@ -217,6 +217,7 @@ public class DialogueManager : MonoBehaviour
                     case '?':
                     case '!':
                     case '.':
+                    case '-':
                         typingSpeedMultiplier = 5;
                         break;
 

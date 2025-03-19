@@ -91,6 +91,7 @@ MonoBehaviour:
   levelStartMessage: 
   messageDelay: 0.5
   typingSpeed: 0.05
+  restartAllowed: 1
   tutorialLevel: 0
 --- !u!114 &1005913027217202793
 MonoBehaviour:

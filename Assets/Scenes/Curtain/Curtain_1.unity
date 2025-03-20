@@ -323,8 +323,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a5cc29929780484469809daa6dacfef5, type: 2}
-  m_sharedMaterial: {fileID: 6356946661926172341, guid: a5cc29929780484469809daa6dacfef5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ad44ca77832d89346bfb19b3b67d1c28, type: 2}
+  m_sharedMaterial: {fileID: 4196797298146470646, guid: ad44ca77832d89346bfb19b3b67d1c28, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -354,12 +354,12 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -8.4
-  m_wordSpacing: -6.91
+  m_characterSpacing: -1
+  m_wordSpacing: -2
   m_lineSpacing: -4.61
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   levels:
   - {fileID: 7743873855784849833, guid: cfc77c9bbb2fc4743b5e4fe655800820, type: 3}
   - {fileID: 7743873855784849833, guid: 11ea78c96e14d2f478ffbff781195ce4, type: 3}
-  - {fileID: 7743873855784849833, guid: fb35648e22de0ae489113a95819caf10, type: 3}
+  - {fileID: 7743873855784849833, guid: f12b8b01076328f4095c25e24345a716, type: 3}
   currentLevel: {fileID: 0}
   progressAmount: 0
   progressBarFill: {fileID: 147019753}
@@ -1262,10 +1262,10 @@ MonoBehaviour:
     Path: event:/Ambience/Wind
   music:
     Guid:
-      Data1: 575621830
-      Data2: 1264787302
-      Data3: 1067145610
-      Data4: 2004713201
+      Data1: 1344882890
+      Data2: 1111348605
+      Data3: 127505294
+      Data4: -761611654
     Path: event:/Music/BGM
 --- !u!1 &327839028
 GameObject:
@@ -2647,6 +2647,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 579fdbf9b3dd1b54d8873285d9689fd6, type: 2}
     - {fileID: 11400000, guid: 3b3bcaeb136213c41af11dd26564584d, type: 2}
     - {fileID: 11400000, guid: c3f443c0b8f9cd14295a7bbbf2a2fcf7, type: 2}
+    - {fileID: 11400000, guid: 99472997f95c7f645b1fe5eacd4efa02, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2856,6 +2857,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1470784756}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: SetMusicVersion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!320 &1470784755
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -2909,6 +2924,8 @@ MonoBehaviour:
   _curtain: {fileID: 792679797}
   _stage: {fileID: 2054390794}
   _gameManager: {fileID: 146355887}
+  musicArea: 2
+  musicVersion: 4
   associatedFlag: 
 --- !u!1 &1476931026
 GameObject:
@@ -3463,6 +3480,55 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1765710142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765710144}
+  - component: {fileID: 1765710143}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1765710143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765710142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 1e58d623bb0523145acf90bea39d6ba6, type: 2}
+--- !u!4 &1765710144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765710142}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1516151, y: 0.06383914, z: -4.459941}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769997506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,8 +4082,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a5cc29929780484469809daa6dacfef5, type: 2}
-  m_sharedMaterial: {fileID: 6356946661926172341, guid: a5cc29929780484469809daa6dacfef5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ad44ca77832d89346bfb19b3b67d1c28, type: 2}
+  m_sharedMaterial: {fileID: 4196797298146470646, guid: ad44ca77832d89346bfb19b3b67d1c28, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4041,8 +4107,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4439,6 +4505,8 @@ MonoBehaviour:
   _curtain: {fileID: 792679797}
   _stage: {fileID: 2054390794}
   _gameManager: {fileID: 146355887}
+  musicArea: 2
+  musicVersion: 1
   associatedFlag: 
 --- !u!114 &2115606061
 MonoBehaviour:
@@ -4466,6 +4534,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 016b3c52ea145d64b9f2efa3f3f575ca, type: 2}
     - {fileID: 11400000, guid: 5eecf465d8db9b14b8fdea0d90ba5cfc, type: 2}
     - {fileID: 11400000, guid: 579fdbf9b3dd1b54d8873285d9689fd6, type: 2}
+    - {fileID: 11400000, guid: 693614b302ae1444cb5e097e640ded2b, type: 2}
+    - {fileID: 11400000, guid: 99472997f95c7f645b1fe5eacd4efa02, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -4647,6 +4717,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2115606060}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: SetMusic
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2115606060}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: SetMusicVersion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &824338688762619430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,3 +4823,4 @@ SceneRoots:
   - {fileID: 1829789559}
   - {fileID: 2062399980}
   - {fileID: 146355885}
+  - {fileID: 1765710144}

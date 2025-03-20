@@ -90,9 +90,17 @@ MonoBehaviour:
   enemiesRemaining: 0
   pauseManager: {fileID: 0}
   _gameManager: {fileID: 0}
-  levelStartMessage: 
+  levelStartMessage: Fill the green bar to perform a Miracle.
   messageDelay: 0.5
   typingSpeed: 0.05
+  restartAllowed: 1
+  tutorialLevel: 0
+  startMusic: 0
+  startMusicArea: 2
+  startMusicVersion: 3
+  endMusic: 1
+  endMusicArea: 2
+  endMusicVersion: 1
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6350803495081981011, guid: 4b27e7a2da8e991468cfb6677974b9ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6350803495081981011, guid: 4b27e7a2da8e991468cfb6677974b9ef, type: 3}
       propertyPath: m_LocalPosition.z

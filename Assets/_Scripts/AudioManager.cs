@@ -107,7 +107,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetSongVersion(float version)
     {
-        musicEventInstance.setParameterByName("song_version", version);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SongMode", version);
+        Debug.Log(version);
     }
 
 

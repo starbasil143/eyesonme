@@ -93,6 +93,12 @@ MonoBehaviour:
   typingSpeed: 0.05
   restartAllowed: 1
   tutorialLevel: 0
+  startMusic: 1
+  startMusicArea: 2
+  startMusicVersion: 2
+  endMusic: 1
+  endMusicArea: 2
+  endMusicVersion: 3
 --- !u!114 &1005913027217202793
 MonoBehaviour:
   m_ObjectHideFlags: 0

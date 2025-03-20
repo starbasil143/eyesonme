@@ -16,25 +16,29 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>13</value>
+			<value>14</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>None</value>
-			<value>Town</value>
-			<value>Forest1</value>
-			<value>Forest2</value>
-			<value>PlayerHouse</value>
-			<value>MalloryHouse</value>
-			<value>Silent</value>
-			<value>Cult</value>
-			<value>Battle1</value>
-			<value>Battle2</value>
-			<value>Battle3</value>
 			<value>Title</value>
-			<value>Win</value>
+			<value>C 1 1</value>
+			<value>C 1 2</value>
+			<value>C 1 3</value>
+			<value>C 1 4</value>
+			<value>C 2 1</value>
+			<value>C 2 2</value>
+			<value>C 2 3</value>
+			<value>C 2 4</value>
+			<value>C 3 1</value>
+			<value>C 3 2</value>
+			<value>C 3 3</value>
+			<value>C 3 4</value>
 		</property>
 		<property name="initialValue">
-			<value>6</value>
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

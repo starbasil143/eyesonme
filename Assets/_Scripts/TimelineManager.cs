@@ -12,6 +12,8 @@ public class TimelineManager : MonoBehaviour
     public GameObject _curtain;
     public GameObject _stage;
     public CGameManager _gameManager;
+    public MusicArea musicArea;
+    public int musicVersion;
     public string associatedFlag;
     
 
@@ -100,6 +102,10 @@ public class TimelineManager : MonoBehaviour
 
     public void SetMusic()
     {
-        // AudioManager.instance.SetMusicArea(musicArea);
+        AudioManager.instance.SetMusicArea(musicArea);
+    }
+    public void SetMusicVersion()
+    {
+        AudioManager.instance.SetSongVersion(musicVersion);
     }
 }

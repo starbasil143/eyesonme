@@ -22,6 +22,13 @@ public class CLevelLogic : MonoBehaviour
     public bool tutorialLevel;
     private CPlayer _player;
 
+    public bool startMusic;
+    public MusicArea startMusicArea;
+    public int startMusicVersion;
+    public bool endMusic;
+    public MusicArea endMusicArea;
+    public int endMusicVersion = -1;
+
 
     // public GameObject goalObject;
 
@@ -87,6 +94,11 @@ public class CLevelLogic : MonoBehaviour
 
     public void ExitLevel()
     {
+        if (endMusic)
+        {
+            AudioManager.instance.SetMusicArea(endMusicArea);
+            AudioManager.instance.SetSongVersion(endMusicVersion);
+        }
         ClearMessageText();
         Destroy(gameObject);
     }

@@ -111,6 +111,10 @@ public class AudioManager : MonoBehaviour
         Debug.Log(version);
     }
 
+    public void SetAiming(bool isAiming)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Aiming", isAiming?1:0);
+    }
 
     private void CleanUp()
     {

@@ -90,7 +90,7 @@ MonoBehaviour:
   enemiesRemaining: 0
   pauseManager: {fileID: 0}
   _gameManager: {fileID: 0}
-  levelStartMessage: Completely fill the green bar to perform a Miracle.
+  levelStartMessage: 
   messageDelay: 0.5
   typingSpeed: 0.05
   restartAllowed: 1

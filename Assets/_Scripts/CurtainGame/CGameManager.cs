@@ -150,11 +150,6 @@ public class CGameManager : MonoBehaviour
         ClearMessage();
         if (currentLevel != null)
         {
-            if (currentLevel.GetComponent<CLevelLogic>().endMusic)
-            {
-                AudioManager.instance.SetMusicArea(currentLevel.GetComponent<CLevelLogic>().endMusicArea);
-                AudioManager.instance.SetSongVersion(currentLevel.GetComponent<CLevelLogic>().endMusicVersion);
-            }
             Destroy(currentLevel);
         }
     }
@@ -189,6 +184,11 @@ public class CGameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        if (currentLevel.GetComponent<CLevelLogic>().endMusic)
+        {
+            AudioManager.instance.SetMusicArea(currentLevel.GetComponent<CLevelLogic>().endMusicArea);
+            AudioManager.instance.SetSongVersion(currentLevel.GetComponent<CLevelLogic>().endMusicVersion);
+        }
         CloseLevel();
         index++;
         animator.Play("c_level_transition");

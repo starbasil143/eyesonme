@@ -33,11 +33,13 @@ public class CPlayerAim : MonoBehaviour
         layerMask = LayerMask.GetMask("Target");
         layerMaskWithPlayer = LayerMask.GetMask("Target", "Player");
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        _lineRenderer.enabled = false;
     }
 
 
     void Update()
     {
+        AudioManager.instance.SetAiming(_lineRenderer.enabled);
         if (!isFrozen)
         {
             if (InputManager.Ready)
@@ -171,6 +173,10 @@ public class CPlayerAim : MonoBehaviour
                         _beamRenderer.enabled = false;
                         _levelLogic.CheckWin();
                         _player.ExpendCharge();
+                        if (_beamRenderer.positionCount == 2)
+                        {
+                            AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_beam_fire, transform.position);
+                        }
                         // StartCoroutine(CheckExpended());
                         break;
 
@@ -193,9 +199,12 @@ public class CPlayerAim : MonoBehaviour
         
         
     }
-    
-    
-    
+
+
+    void OnDestroy()
+    {
+        AudioManager.instance.SetAiming(false);
+    }
 
     private Vector2 GetMouseDirectionVector()
     {

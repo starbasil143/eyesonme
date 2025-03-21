@@ -39,6 +39,11 @@ public class CPlayer : MonoBehaviour
         remainingCharges = newRemainingCharges;
     }
 
+    public void GainCharge(int amount = 1)
+    {
+        remainingCharges += amount;
+    }
+
     public void ExpendCharge(int amount = 1)
     {
         remainingCharges -= amount;

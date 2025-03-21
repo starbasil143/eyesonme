@@ -91,17 +91,20 @@ MonoBehaviour:
   enemiesRemaining: 0
   pauseManager: {fileID: 0}
   _gameManager: {fileID: 0}
-  levelStartMessage: Reinforced targets stop the beam
+  levelStartMessage: Reinforced targets [+] stop the beam
   messageDelay: 0.5
   typingSpeed: 0.05
   restartAllowed: 1
   tutorialLevel: 0
-  startMusic: 0
-  startMusicArea: 2
-  startMusicVersion: 3
-  endMusic: 0
-  endMusicArea: 2
-  endMusicVersion: 1
+  startMusic: 1
+  startMusicArea: 6
+  startMusicVersion: 2
+  endMusic: 1
+  endMusicArea: 6
+  endMusicVersion: 3
+  restartTextIfDisabled: []
+  restartTextIfEnabled: []
+  noRestartTextEver: 0
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0

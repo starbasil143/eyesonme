@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 1.0333333333333334
+    m_Start: 1.6333333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -6396817578384745281}
     m_Duration: 4.033333333333333
@@ -244,7 +244,7 @@ MonoBehaviour:
       Slot13: 0
       Slot14: 0
       Slot15: 0
-  EventLength: 6
+  EventLength: 6.875
   eventName: 
   EventReference:
     Guid:
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 1.85
+  m_Time: 2.55
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: c3f443c0b8f9cd14295a7bbbf2a2fcf7, type: 2}
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 1.35
+  m_Time: 1.9333333333333333
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: d935087714f62eb40898f5e536e8d0b3, type: 2}

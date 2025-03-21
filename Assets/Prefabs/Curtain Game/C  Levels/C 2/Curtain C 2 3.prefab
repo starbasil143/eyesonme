@@ -96,14 +96,15 @@ MonoBehaviour:
   restartAllowed: 1
   tutorialLevel: 0
   startMusic: 0
-  startMusicArea: 2
+  startMusicArea: 6
   startMusicVersion: 3
-  endMusic: 0
-  endMusicArea: 2
-  endMusicVersion: 1
+  endMusic: 1
+  endMusicArea: 6
+  endMusicVersion: 5
   restartTextIfDisabled:
   - {fileID: 1793962778935498127}
   restartTextIfEnabled: []
+  noRestartTextEver: 0
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0

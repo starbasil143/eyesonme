@@ -2044,8 +2044,8 @@ MonoBehaviour:
   _curtain: {fileID: 792679797}
   _stage: {fileID: 2054390794}
   _gameManager: {fileID: 146355887}
-  musicArea: 2
-  musicVersion: 4
+  musicArea: 6
+  musicVersion: 5
   associatedFlag: 
 --- !u!1 &1476931026
 GameObject:
@@ -3166,7 +3166,7 @@ MonoBehaviour:
   _curtain: {fileID: 792679797}
   _stage: {fileID: 2054390794}
   _gameManager: {fileID: 146355887}
-  musicArea: 2
+  musicArea: 6
   musicVersion: 1
   associatedFlag: 
 --- !u!114 &2115606061
@@ -3542,7 +3542,7 @@ PrefabInstance:
       objectReference: {fileID: 147019753}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: levels.Array.size
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: _filledProgressBar
@@ -3551,31 +3551,31 @@ PrefabInstance:
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[0]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 5054db37395b4ba4496f6ccc94bb572d, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: eeadaf2cb5a4d6147833e81526ee186b, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[1]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: eeadaf2cb5a4d6147833e81526ee186b, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: bd1b14473682ba3449047cf8aa6bbd8f, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[2]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: bd1b14473682ba3449047cf8aa6bbd8f, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 8cd81bdd3c48b484495e77abb7288f45, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[3]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 8cd81bdd3c48b484495e77abb7288f45, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 096be8c606ba0fd43b8ce7d0127fdb43, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[4]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: b194394977d76ca4eb3f7e95eedca32d, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 096be8c606ba0fd43b8ce7d0127fdb43, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[5]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 096be8c606ba0fd43b8ce7d0127fdb43, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 0ed0dee0e03f9d84789ccb04d44393d4, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[6]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 0ed0dee0e03f9d84789ccb04d44393d4, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 37b307a6a22916f4cbf5f6c578d3e74d, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[7]'
       value: 
@@ -3679,9 +3679,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1857373762627521080, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3397789223145741854, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
       propertyPath: m_Name
       value: Game Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378727199917523466, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5336620062916248425, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
       propertyPath: m_fontSize

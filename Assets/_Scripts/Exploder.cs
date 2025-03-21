@@ -7,7 +7,7 @@ public class Exploder : MonoBehaviour
     public TimelineManager _winCutscene;
     public void Explode()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_ping, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_wall_mirror, transform.position);
         Instantiate(deathObject, transform.position, transform.rotation, transform.parent);
     }
 

@@ -14,7 +14,7 @@ public class Star : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Instantiate(deathObject);
+            Instantiate(deathObject, transform.position, transform.rotation, transform.parent);
             collision.gameObject.GetComponentInChildren<CPlayer>().GainCharge();
             Destroy(gameObject);
             

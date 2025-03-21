@@ -13,7 +13,7 @@ public class StarExplode : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_ping, transform.position);
         yield return new WaitForSeconds(.1f);
         GetComponentInChildren<ParticleSystem>().Play();
-        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
         Destroy(gameObject, 3);
     }
 }

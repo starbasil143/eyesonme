@@ -101,9 +101,9 @@ MonoBehaviour:
   startMusic: 0
   startMusicArea: 2
   startMusicVersion: 3
-  endMusic: 0
+  endMusic: 1
   endMusicArea: 2
-  endMusicVersion: 1
+  endMusicVersion: 3
 --- !u!1001 &868411572831453926
 PrefabInstance:
   m_ObjectHideFlags: 0

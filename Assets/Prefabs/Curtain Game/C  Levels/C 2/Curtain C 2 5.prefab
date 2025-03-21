@@ -483,6 +483,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8832956979313440358}
     m_Modifications:
+    - target: {fileID: 3167293932010702930, guid: 5fff299fd55c47449a4e2294e50b56ec, type: 3}
+      propertyPath: deathObject
+      value: 
+      objectReference: {fileID: 3219545375762689971, guid: 46d68be026a1ad449a2c1fce649ca19e, type: 3}
     - target: {fileID: 3219545375762689971, guid: 5fff299fd55c47449a4e2294e50b56ec, type: 3}
       propertyPath: m_Name
       value: Star
@@ -609,7 +613,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5808932717555482196, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
-      value: 0.9900055
+      value: 0.11500549
+      objectReference: {fileID: 0}
+    - target: {fileID: -5808932717555482196, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
+      value: 0.7400055
       objectReference: {fileID: 0}
     - target: {fileID: 1907670352502724980, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
       propertyPath: m_Name
@@ -1335,7 +1343,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5808932717555482196, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
-      value: 0.9900055
+      value: 0.11500549
+      objectReference: {fileID: 0}
+    - target: {fileID: -5808932717555482196, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
+      value: 0.7400055
       objectReference: {fileID: 0}
     - target: {fileID: 1907670352502724980, guid: fd6eab9bbc0a88f4baacc7ca75cf3c54, type: 3}
       propertyPath: m_Name

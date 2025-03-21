@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c1df0c1d73df48a578d6c0167a5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathObject: {fileID: 7682483202030090914}
+  deathObject: {fileID: 3219545375762689971, guid: 46d68be026a1ad449a2c1fce649ca19e, type: 3}
 --- !u!1 &7682483202030090914
 GameObject:
   m_ObjectHideFlags: 0

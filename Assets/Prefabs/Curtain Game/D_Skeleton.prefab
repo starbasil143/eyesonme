@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7867368824421463272}
   - component: {fileID: 4594635238129383937}
   - component: {fileID: -5091300389867935562}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: D_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1488998163409341990}
   - component: {fileID: 4680903157477292654}
   - component: {fileID: 5970988930019121800}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DeathExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

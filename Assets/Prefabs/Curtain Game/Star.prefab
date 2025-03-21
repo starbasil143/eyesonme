@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7867368824421463272}
   - component: {fileID: 9010920682167139611}
   - component: {fileID: 3167293932010702930}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Star
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183757095752966277}
   - component: {fileID: 8733734310257225018}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: StarGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

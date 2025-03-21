@@ -314,6 +314,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   _gameManager: {fileID: 0}
   _levelLogic: {fileID: 0}
+  deathObject: {fileID: 3219545375762689971, guid: e301652b46a97464482dc8506ed07934, type: 3}
 --- !u!114 &4112412269600210920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +337,7 @@ MonoBehaviour:
   isFrozen: 0
   _lineRenderer: {fileID: 6630664202531556573}
   _beamRenderer: {fileID: 6279247299190821070}
-  hitStopDuration: 0.2
+  hitStopDuration: 0.15
 --- !u!1 &5037762263052092567
 GameObject:
   m_ObjectHideFlags: 0

@@ -107,6 +107,10 @@ MonoBehaviour:
   endMusic: 0
   endMusicArea: 2
   endMusicVersion: 1
+  restartTextIfDisabled:
+  - {fileID: 150466479471024840}
+  restartTextIfEnabled:
+  - {fileID: 5343137150116668161}
 --- !u!1001 &698705300452569000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,6 +575,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fff299fd55c47449a4e2294e50b56ec, type: 3}
+--- !u!1 &150466479471024840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219545375762689971, guid: 5fff299fd55c47449a4e2294e50b56ec, type: 3}
+  m_PrefabInstance: {fileID: 3366597957526713723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4870094624694256019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7867368824421463272, guid: 5fff299fd55c47449a4e2294e50b56ec, type: 3}
@@ -862,6 +871,11 @@ PrefabInstance:
 --- !u!4 &611747210349383206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6350803495081981011, guid: bf232180b545b094aaa5d27c8aee7522, type: 3}
+  m_PrefabInstance: {fileID: 5791570819966417525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5343137150116668161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1907670352502724980, guid: bf232180b545b094aaa5d27c8aee7522, type: 3}
   m_PrefabInstance: {fileID: 5791570819966417525}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5988035729222438002

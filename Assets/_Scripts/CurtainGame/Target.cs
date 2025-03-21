@@ -236,6 +236,7 @@ public class Target : MonoBehaviour
                 break;
 
             case TargetType.Player:
+                _player.GetComponentInChildren<CPlayer>().SelfDestruct();
                 msg = "stop";
                 break;
         }

@@ -29,6 +29,10 @@ public class CLevelLogic : MonoBehaviour
     public MusicArea endMusicArea;
     public int endMusicVersion = -1;
 
+    public GameObject[] restartTextIfDisabled;
+    public GameObject[] restartTextIfEnabled;
+    public bool noRestartTextEver;
+
 
     // public GameObject goalObject;
 
@@ -88,7 +92,25 @@ public class CLevelLogic : MonoBehaviour
         }
         else if (_player.GetRemainingCharges() <= 0)
         {
-            GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("TextOn");
+            bool turnOnText = true;
+            foreach (GameObject gameObject in restartTextIfDisabled)
+            {
+                if (gameObject != null && gameObject.activeSelf)
+                {
+                    turnOnText = false;
+                }
+            }
+            foreach (GameObject gameObject in restartTextIfEnabled)
+            {
+                if (gameObject != null && gameObject.activeSelf)
+                {
+                    turnOnText = true;
+                }
+            }
+            if (turnOnText && !noRestartTextEver)
+            {
+                GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("TextOn");
+            }
         }
     }
 

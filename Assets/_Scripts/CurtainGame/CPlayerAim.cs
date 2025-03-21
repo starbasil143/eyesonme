@@ -19,7 +19,7 @@ public class CPlayerAim : MonoBehaviour
     [SerializeField] private LineRenderer _lineRenderer;
 
     [SerializeField] private LineRenderer _beamRenderer;
-    public float hitStopDuration = .2f;
+    public float hitStopDuration = .1f;
 
 
     void Awake()
@@ -192,9 +192,7 @@ public class CPlayerAim : MonoBehaviour
         }
         else
         {
-            _beamRenderer.enabled = false;
-            _levelLogic.CheckWin();
-            _player.ExpendCharge();
+            StartCoroutine(BeamContinue(ray.point, direction));
         }
         
         

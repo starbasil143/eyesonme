@@ -106,7 +106,7 @@
 	</object>
 	<object class="SingleSound" id="{8a8ab0b1-b1d9-4e52-90e1-86938aad1f1c}">
 		<property name="length">
-			<value>0.5</value>
+			<value>0.3359375</value>
 		</property>
 		<relationship name="automators">
 			<destination>{8eae42a0-b3a7-401a-9f50-34755ca169cb}</destination>
@@ -174,7 +174,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>80</value>
+			<value>84</value>
 		</property>
 	</object>
 </objects>

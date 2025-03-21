@@ -907,10 +907,10 @@ MonoBehaviour:
     Path: event:/SFX/General/Curtain Lift
   sfx_fill:
     Guid:
-      Data1: 1482661411
-      Data2: 1335939563
-      Data3: -1851670635
-      Data4: 1469877262
+      Data1: 95465931
+      Data2: 1201685859
+      Data3: -773453633
+      Data4: 1685913771
     Path: event:/SFX/General/Fill
   sfx_heal:
     Guid:

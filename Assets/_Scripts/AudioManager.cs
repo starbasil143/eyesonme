@@ -116,6 +116,11 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Aiming", isAiming?1:0, true);
     }
 
+    public void SetFillAmount(float fillAmount)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("fillAmount", fillAmount, true);
+    }
+
     private void CleanUp()
     {
         foreach (EventInstance eventInstance in eventInstances)

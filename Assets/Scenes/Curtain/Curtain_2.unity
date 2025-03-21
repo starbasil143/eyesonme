@@ -907,10 +907,10 @@ MonoBehaviour:
     Path: event:/SFX/General/Curtain Lift
   sfx_fill:
     Guid:
-      Data1: 1482661411
-      Data2: 1335939563
-      Data3: -1851670635
-      Data4: 1469877262
+      Data1: 95465931
+      Data2: 1201685859
+      Data3: -773453633
+      Data4: 1685913771
     Path: event:/SFX/General/Fill
   sfx_heal:
     Guid:
@@ -1718,7 +1718,7 @@ GameObject:
   - component: {fileID: 1470784755}
   - component: {fileID: 1470784754}
   m_Layer: 0
-  m_Name: C 1 Win Timeline
+  m_Name: C 2 Win Timeline
   m_TagString: TimelineManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2037,8 +2037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueAssets:
-  - {fileID: 4900000, guid: 891fc93cd40f1a949972a7e6b03be62a, type: 3}
-  - {fileID: 4900000, guid: 3b9e646f55305db4eaed6a6f998d12de, type: 3}
+  - {fileID: 4900000, guid: bbe0c161c8deb8f44a1a0f33c2e69615, type: 3}
+  - {fileID: 4900000, guid: 6833596a6905f8642923aca828b8a398, type: 3}
   objectsToDisable: []
   objectsToEnable: []
   _curtain: {fileID: 792679797}
@@ -3093,7 +3093,7 @@ GameObject:
   - component: {fileID: 2115606059}
   - component: {fileID: 2115606061}
   m_Layer: 0
-  m_Name: C 1 Intro Timeline
+  m_Name: C 2 Intro Timeline
   m_TagString: TimelineManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3160,7 +3160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueAssets:
-  - {fileID: 4900000, guid: 1cd8bd842dcb730409b21f0498ffa6b9, type: 3}
+  - {fileID: 4900000, guid: b8488116475c75e45bd1c0c93631d362, type: 3}
   objectsToDisable: []
   objectsToEnable: []
   _curtain: {fileID: 792679797}
@@ -3542,7 +3542,7 @@ PrefabInstance:
       objectReference: {fileID: 147019753}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: levels.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: _filledProgressBar
@@ -3551,19 +3551,35 @@ PrefabInstance:
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[0]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: cfc77c9bbb2fc4743b5e4fe655800820, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 5054db37395b4ba4496f6ccc94bb572d, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[1]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 11ea78c96e14d2f478ffbff781195ce4, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: eeadaf2cb5a4d6147833e81526ee186b, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[2]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: f12b8b01076328f4095c25e24345a716, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: bd1b14473682ba3449047cf8aa6bbd8f, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[3]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 397d4a4368ae716438a3737f72e999dc, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 8cd81bdd3c48b484495e77abb7288f45, type: 3}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: 'levels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7743873855784849833, guid: b194394977d76ca4eb3f7e95eedca32d, type: 3}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: 'levels.Array.data[5]'
+      value: 
+      objectReference: {fileID: 7743873855784849833, guid: 096be8c606ba0fd43b8ce7d0127fdb43, type: 3}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: 'levels.Array.data[6]'
+      value: 
+      objectReference: {fileID: 7743873855784849833, guid: 0ed0dee0e03f9d84789ccb04d44393d4, type: 3}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: 'levels.Array.data[7]'
+      value: 
+      objectReference: {fileID: 7743873855784849833, guid: 37b307a6a22916f4cbf5f6c578d3e74d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3659,6 +3675,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1057779964820559155, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3397789223145741854, guid: bdd1ddcb3d79c9147972c51099cb69b1, type: 3}
       propertyPath: m_Name
       value: Game Canvas
@@ -3917,6 +3937,22 @@ PrefabInstance:
     - target: {fileID: 108886244364718668, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41fdb1fabc8879d4b937501bc97ce971, type: 3}
+    - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4611121657824190170, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
       propertyPath: m_Name

@@ -101,6 +101,8 @@ public class CGameManager : MonoBehaviour
         float originalFillAmount = progressBarFill.fillAmount;
         float newFillAmount = (float)(index) / numberOfLevels;
         float t = 0f;
+        AudioManager.instance.SetFillAmount(progressBarFill.fillAmount);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_fill, transform.position);
         while (t < 1)
         {
             t += Time.deltaTime * 3f;

@@ -119,7 +119,27 @@ public class TimelineManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex != 2)
         {
+            AudioManager.instance.SetMusicArea(0);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
+
+    public void SaveProgress()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Curtain_1":
+                PlayerPrefs.SetInt("part1_finished", 1);
+                break;
+
+            case "Curtain_2":
+                PlayerPrefs.SetInt("part2_finished", 1);
+                break;
+
+            case "Curtain_3":
+                PlayerPrefs.SetInt("part3_finished", 1);
+                break;
+        }
+    }
+
 }

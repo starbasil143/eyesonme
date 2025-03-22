@@ -150,6 +150,7 @@ Transform:
   m_Children:
   - {fileID: 2115606058}
   - {fileID: 1470784753}
+  - {fileID: 1624073471}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107314861
@@ -1583,6 +1584,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   _winTimeline: {fileID: 0}
   _filledProgressBar: {fileID: 0}
+  killLevel: {fileID: 0}
+  killTime: 0
+  _spottedTimeline: {fileID: 0}
+  indexForCutscene: -1
 --- !u!4 &1324920530
 Transform:
   m_ObjectHideFlags: 0
@@ -1723,7 +1728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1470784753
 Transform:
   m_ObjectHideFlags: 0
@@ -2000,7 +2005,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1470784752}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a4bc124f196ee944ea111ca777495356, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -2022,6 +2027,14 @@ PlayableDirector:
     value: {fileID: 1470784754}
   - key: {fileID: -3127207906776800616, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
     value: {fileID: 792679800}
+  - key: {fileID: -6245329963991638743, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1470784754}
+  - key: {fileID: -7579727270446522220, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -8888094101074401308, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -180611993732660657, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1191420340}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1470784756
@@ -2037,7 +2050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueAssets:
-  - {fileID: 4900000, guid: 1c72b906b1675fd4299984f5dc34d057, type: 3}
   - {fileID: 4900000, guid: 6a552b883d0266b4b9878bdfd8ad3716, type: 3}
   objectsToDisable: []
   objectsToEnable: []
@@ -2510,6 +2522,391 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1624073470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624073471}
+  - component: {fileID: 1624073474}
+  - component: {fileID: 1624073473}
+  - component: {fileID: 1624073472}
+  m_Layer: 0
+  m_Name: C 3 Spotted Timeline
+  m_TagString: TimelineManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1624073471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624073470}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 54610194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624073472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624073470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d935087714f62eb40898f5e536e8d0b3, type: 2}
+    - {fileID: 11400000, guid: 571b273e57050234c848be13d82c830f, type: 2}
+    - {fileID: 11400000, guid: 4474c42619231dd4a8c491c54b4b2436, type: 2}
+    - {fileID: 11400000, guid: b40553b0127b7454a8e01f346fff3e06, type: 2}
+    - {fileID: 11400000, guid: 9d2970ed2c615794a88b29676e91e435, type: 2}
+    - {fileID: 11400000, guid: 644330c64c3c0fb4e8785b941c25c6b6, type: 2}
+    - {fileID: 11400000, guid: 1fbebf76e83974247b9480aa874a8556, type: 2}
+    - {fileID: 11400000, guid: 50dd7c34cec11ee45b87b3ed47aec8d6, type: 2}
+    - {fileID: 11400000, guid: 3ba7e8ae9d74e184295a23cc4d3a60f9, type: 2}
+    - {fileID: 11400000, guid: 016b3c52ea145d64b9f2efa3f3f575ca, type: 2}
+    - {fileID: 11400000, guid: 5eecf465d8db9b14b8fdea0d90ba5cfc, type: 2}
+    - {fileID: 11400000, guid: 579fdbf9b3dd1b54d8873285d9689fd6, type: 2}
+    - {fileID: 11400000, guid: 3b3bcaeb136213c41af11dd26564584d, type: 2}
+    - {fileID: 11400000, guid: c3f443c0b8f9cd14295a7bbbf2a2fcf7, type: 2}
+    - {fileID: 11400000, guid: 99472997f95c7f645b1fe5eacd4efa02, type: 2}
+    - {fileID: 11400000, guid: b3f74dc645b95a145a6d2eef67b075bc, type: 2}
+    - {fileID: 11400000, guid: 693614b302ae1444cb5e097e640ded2b, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger4
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger5
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DTrigger6
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: PauseTimeline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: ResumeTimeline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DeactivateDirector
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: EnableObjects
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: DisableObjects
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: StartPuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: OpenCurtain
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: ClosePuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: CloseCurtain
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: SetMusicVersion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: KillLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1624073474}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: SetMusic
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!320 &1624073473
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624073470}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 60dadbbf009583844b508b50df45fab3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3127207906776800616, guid: d40802105926aec4a85951c70025a888, type: 2}
+    value: {fileID: 792679800}
+  - key: {fileID: -6245329963991638743, guid: d40802105926aec4a85951c70025a888, type: 2}
+    value: {fileID: 1624073472}
+  - key: {fileID: -7579727270446522220, guid: d40802105926aec4a85951c70025a888, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -180611993732660657, guid: d40802105926aec4a85951c70025a888, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: -7579727270446522220, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -180611993732660657, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: -6245329963991638743, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 1624073472}
+  - key: {fileID: -3127207906776800616, guid: 6bf380afa2571f247b3a7ffdab798dbf, type: 2}
+    value: {fileID: 792679800}
+  - key: {fileID: -6245329963991638743, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1624073472}
+  - key: {fileID: -7579727270446522220, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -8888094101074401308, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1407652357}
+  - key: {fileID: -180611993732660657, guid: a4bc124f196ee944ea111ca777495356, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: -6245329963991638743, guid: 60dadbbf009583844b508b50df45fab3, type: 2}
+    value: {fileID: 1624073472}
+  - key: {fileID: -180611993732660657, guid: 60dadbbf009583844b508b50df45fab3, type: 2}
+    value: {fileID: 1191420340}
+  - key: {fileID: 1738219431992871304, guid: 60dadbbf009583844b508b50df45fab3, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &1624073474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624073470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e424351e369e544590d7816dc64f9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueAssets:
+  - {fileID: 4900000, guid: 1c72b906b1675fd4299984f5dc34d057, type: 3}
+  objectsToDisable: []
+  objectsToEnable: []
+  _curtain: {fileID: 792679797}
+  _stage: {fileID: 2054390794}
+  _gameManager: {fileID: 146355887}
+  musicArea: 0
+  musicVersion: 5
+  associatedFlag: 
 --- !u!1 &1769997506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,7 +3563,7 @@ MonoBehaviour:
   _curtain: {fileID: 792679797}
   _stage: {fileID: 2054390794}
   _gameManager: {fileID: 146355887}
-  musicArea: 6
+  musicArea: 2
   musicVersion: 1
   associatedFlag: 
 --- !u!114 &2115606061
@@ -3197,6 +3594,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 579fdbf9b3dd1b54d8873285d9689fd6, type: 2}
     - {fileID: 11400000, guid: 693614b302ae1444cb5e097e640ded2b, type: 2}
     - {fileID: 11400000, guid: 99472997f95c7f645b1fe5eacd4efa02, type: 2}
+    - {fileID: 11400000, guid: b3f74dc645b95a145a6d2eef67b075bc, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3406,6 +3804,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2115606057}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &756494908428722484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3533,6 +3945,10 @@ PrefabInstance:
       value: Curtain Game
       objectReference: {fileID: 0}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: killLevel
+      value: 
+      objectReference: {fileID: 7743873855784849833, guid: f7c981cf5125e52469b2be7997459226, type: 3}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: _winTimeline
       value: 
       objectReference: {fileID: 1470784756}
@@ -3541,8 +3957,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 147019753}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: _spottedTimeline
+      value: 
+      objectReference: {fileID: 1624073474}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
+      propertyPath: indexForCutscene
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: levels.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: _filledProgressBar
@@ -3571,7 +3995,7 @@ PrefabInstance:
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[5]'
       value: 
-      objectReference: {fileID: 7743873855784849833, guid: 0ed0dee0e03f9d84789ccb04d44393d4, type: 3}
+      objectReference: {fileID: 7743873855784849833, guid: 37b307a6a22916f4cbf5f6c578d3e74d, type: 3}
     - target: {fileID: 7848908837219266526, guid: 71e7211ba960c0f4eaf8b5e5fda21f77, type: 3}
       propertyPath: 'levels.Array.data[6]'
       value: 
@@ -3949,7 +4373,7 @@ PrefabInstance:
     - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 41fdb1fabc8879d4b937501bc97ce971, type: 3}
+      objectReference: {fileID: 21300000, guid: 327160d620b12a14485a36a2aa1ea643, type: 3}
     - target: {fileID: 905600884259767858, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -3965,6 +4389,14 @@ PrefabInstance:
     - target: {fileID: 4611121657824190170, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
       propertyPath: m_Name
       value: GreenGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889301976116933624, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e0b7954614e8ad49909a40f6f2a57c2, type: 2}
+    - target: {fileID: 5889301976116933624, guid: d286e0692ef4c564a8ac3d8aff9774e2, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

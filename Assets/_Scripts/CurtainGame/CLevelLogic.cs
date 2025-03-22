@@ -31,6 +31,7 @@ public class CLevelLogic : MonoBehaviour
 
     public GameObject[] restartTextIfDisabled;
     public GameObject[] restartTextIfEnabled;
+    public bool killLevel;
     public bool noRestartTextEver;
 
 
@@ -88,7 +89,7 @@ public class CLevelLogic : MonoBehaviour
         {
             ClearMessageText();
             GameObject.FindGameObjectWithTag("ResetTextPanel").GetComponent<Animator>().SetTrigger("LevelReset");
-            _gameManager.WinLevel();
+            _gameManager.WinLevel(killLevel);
         }
         else if (_player.GetRemainingCharges() <= 0)
         {

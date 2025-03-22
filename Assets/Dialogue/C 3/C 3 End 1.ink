@@ -1,3 +1,3 @@
-Father, who is that behind the curtain?#voice:soft #inner
+Father, who is that child behind the curtain?#voice:soft #inner
 
 

@@ -1583,6 +1583,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   _winTimeline: {fileID: 0}
   _filledProgressBar: {fileID: 0}
+  killLevel: {fileID: 0}
+  killTime: 0
+  _spottedTimeline: {fileID: 0}
+  indexForCutscene: -1
 --- !u!4 &1324920530
 Transform:
   m_ObjectHideFlags: 0
@@ -1768,6 +1772,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3b3bcaeb136213c41af11dd26564584d, type: 2}
     - {fileID: 11400000, guid: c3f443c0b8f9cd14295a7bbbf2a2fcf7, type: 2}
     - {fileID: 11400000, guid: 99472997f95c7f645b1fe5eacd4efa02, type: 2}
+    - {fileID: 11400000, guid: 06543b0dd543c4d44b385875455c32b4, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1982,6 +1987,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1470784756}
           m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
           m_MethodName: SetMusicVersion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1470784756}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: NextScene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

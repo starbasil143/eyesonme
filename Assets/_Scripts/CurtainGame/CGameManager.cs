@@ -21,6 +21,11 @@ public class CGameManager : MonoBehaviour
 
     public TimelineManager _winTimeline;
     public GameObject _filledProgressBar;
+    public GameObject killLevel;
+    public bool killTime;
+    public TimelineManager _spottedTimeline;
+
+    public int indexForCutscene = -1;
 
 
     private void Start()
@@ -47,13 +52,25 @@ public class CGameManager : MonoBehaviour
 
     public void StartLevel()
     {
-        currentLevel = Instantiate(levels[index], gameObject.transform);
+        currentLevel = Instantiate(killTime?killLevel:levels[index], gameObject.transform);
+        
         _player = currentLevel.GetComponentInChildren<CPlayer>();
         if (currentLevel.GetComponent<CLevelLogic>().startMusic)
         {
             AudioManager.instance.SetMusicArea(currentLevel.GetComponent<CLevelLogic>().startMusicArea);
             AudioManager.instance.SetSongVersion(currentLevel.GetComponent<CLevelLogic>().startMusicVersion);
         }
+    }
+
+    public void StartLevelKill()
+    {
+        killTime = true;
+        animator.Play("c_game_start", 0, 0f);
+    }
+
+    public void GoToKillLevel()
+    {
+        StartLevelKill();
     }
 
 
@@ -100,6 +117,12 @@ public class CGameManager : MonoBehaviour
         int numberOfLevels = levels.Length;
         float originalFillAmount = progressBarFill.fillAmount;
         float newFillAmount = (float)(index) / numberOfLevels;
+
+        if (killTime)
+        {
+            originalFillAmount = 0;
+            newFillAmount = 1;
+        }
         float t = 0f;
         AudioManager.instance.SetFillAmount(progressBarFill.fillAmount);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.sfx_fill, transform.position);
@@ -144,47 +167,51 @@ public class CGameManager : MonoBehaviour
 
     public void ClearMessage()
     {
-        currentLevel.GetComponent<CLevelLogic>().ClearMessageText();
+        if (currentLevel.GetComponent<CLevelLogic>() != null)
+        {
+            currentLevel.GetComponent<CLevelLogic>().ClearMessageText();
+        }
     }
 
     public void CloseLevel()
     {
-        ClearMessage();
         if (currentLevel != null)
         {
+        ClearMessage();
             Destroy(currentLevel);
         }
     }
 
 
-    public void WinLevel()
+    public void WinLevel(bool killLevel)
     {
         if (index < levels.Length - 1)
         {
             if (!winDelayRunning)
             {
-                StartCoroutine(WinLevelDelay());
+                StartCoroutine(WinLevelDelay(killLevel));
             }
         }
         else 
         {
             if (!winDelayRunning)
             {
-                StartCoroutine(WinLevelDelay());
+                StartCoroutine(WinLevelDelay(killLevel));
             }
         }
     }
 
-    IEnumerator WinLevelDelay()
+    IEnumerator WinLevelDelay(bool isKillLevel)
     {
         winDelayRunning = true;
         yield return new WaitForSeconds(.4f);
-        NextLevel();
+
+        NextLevel(index == indexForCutscene);
         winDelayRunning = false;
     }
 
 
-    public void NextLevel()
+    public void NextLevel(bool isKillLevel = false)
     {
         if (currentLevel.GetComponent<CLevelLogic>().endMusic)
         {
@@ -193,20 +220,27 @@ public class CGameManager : MonoBehaviour
         }
         CloseLevel();
         index++;
-        animator.Play("c_level_transition");
+        if (isKillLevel)
+        {
+            animator.Play("transition_to_notice");
+        }
+        else
+        {
+            animator.Play("c_level_transition");
+        }
     }
-    // IEnumerator WinAllLevelsDelay()
-    // {
-    //     winDelayRunning = true;
-    //     yield return new WaitForSeconds(.4f);
-    //     LastLevelComplete();
-    //     winDelayRunning = false;
-    // }
 
     public void LastLevelComplete()
     {
         CloseLevel();
         _winTimeline.gameObject.SetActive(true);
+    }
+
+    public void SpottedCutscene()
+    {
+        CloseLevel();
+        killTime = true;
+        _spottedTimeline.gameObject.SetActive(true);
     }
 
     

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class TimelineManager : MonoBehaviour
 {
@@ -107,5 +108,18 @@ public class TimelineManager : MonoBehaviour
     public void SetMusicVersion()
     {
         AudioManager.instance.SetSongVersion(musicVersion);
+    }
+
+    public void KillLevel()
+    {
+        _gameManager.GoToKillLevel();
+    }
+
+    public void NextScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
     }
 }

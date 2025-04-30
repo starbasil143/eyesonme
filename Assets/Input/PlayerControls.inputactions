@@ -217,6 +217,28 @@
                 },
                 {
                     "name": "",
+                    "id": "89f05d9a-c5af-41ad-b53f-f481947ca0c6",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9bbdc88e-3237-468b-b256-b6ff08cb98cc",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "894b443e-7793-4a40-b4b7-df52bd63d0ba",
                     "path": "",
                     "interactions": "",
@@ -766,6 +788,28 @@
                     "name": "",
                     "id": "c2123883-da25-42a5-98df-d8a185444f3e",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Unpause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fd9c64c-5bab-44e6-bd8a-0c73995a1141",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Unpause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22a77a87-a9b4-41ea-a927-46f45393e72d",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KBM",

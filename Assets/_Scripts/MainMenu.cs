@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,6 +46,12 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Curtain_1");
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("the closerrr");
+        Application.Quit();
     }
 
 }

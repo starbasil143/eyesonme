@@ -124,6 +124,12 @@ public class TimelineManager : MonoBehaviour
         }
     }
 
+    public void GoToMenu()
+    {
+        AudioManager.instance.SetMusicArea(0);
+        SceneManager.LoadScene("Title");
+    }
+
     public void SaveProgress()
     {
         switch (SceneManager.GetActiveScene().name)

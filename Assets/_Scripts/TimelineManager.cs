@@ -117,7 +117,7 @@ public class TimelineManager : MonoBehaviour
 
     public void NextScene()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 3)
         {
             AudioManager.instance.SetMusicArea(0);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);

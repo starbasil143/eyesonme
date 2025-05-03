@@ -6,6 +6,8 @@ public class PauseManager : MonoBehaviour
     public bool paused;
     public bool pausable;
     public bool unpausable;
+
+    public GameObject pauseMenuCanvas;
     void Update()
     {
         if (InputManager.Pause)
@@ -28,6 +30,7 @@ public class PauseManager : MonoBehaviour
     {
         paused = true;
         InputManager.instance.SwitchToUIMap();
+        pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
     }
 
@@ -35,6 +38,7 @@ public class PauseManager : MonoBehaviour
     {
         paused = false;
         InputManager.instance.SwitchToPuzzleMap();
+        pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
     }
 
